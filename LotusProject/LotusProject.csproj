@@ -127,16 +127,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -148,6 +140,26 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="static\css\InitialPage.css" />
+    <Content Include="static\css\styleLayout.css" />
+    <Content Include="static\Images\Alberto Costa.png" />
+    <Content Include="static\Images\bg-flowers.png" />
+    <Content Include="static\Images\Design_Logo_-_TCC__1_-removebg-preview.png" />
+    <Content Include="static\Images\Edward Ramon.png" />
+    <Content Include="static\Images\ImageKnowUs.png" />
+    <Content Include="static\Images\Janice Pereira.png" />
+    <Content Include="static\Images\LogoForBege.png" />
+    <Content Include="static\Images\LogoForBlue.png" />
+    <Content Include="static\Images\LogoPage.png" />
+    <Content Include="static\Images\Lotus SPA.png" />
+    <Content Include="static\Images\svg\Error.svg" />
+    <Content Include="static\Images\svg\LoginEmployee.svg" />
+    <Content Include="static\Images\svg\SignIn.svg" />
+    <Content Include="static\Images\svg\SignUp.svg" />
+    <Content Include="static\Images\svg\SignUpTwo.svg" />
+    <Content Include="static\Images\svg\spainicio.svg" />
+    <Content Include="static\Images\svg\welcomedash.svg" />
+    <Content Include="static\Images\womaninthebathtub.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -159,26 +171,21 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibraryModels\ClassLibraryModels.csproj">
+      <Project>{08bd5c26-f336-498f-8267-5e5429357086}</Project>
+      <Name>ClassLibraryModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

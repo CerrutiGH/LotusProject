@@ -1,0 +1,49 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Yaldevi:wght@200&display=swap');
+
+:root {
+    --secundary-color: #2A435B;
+    --primary-color: #b492ff
+}
+
+.imgmain {
+    background-image: url('../Images/Lotus SPA.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover
+}
+
+.row-cust {
+    padding-bottom: 12%;
+    justify-content: center
+}
+
+.img-logo {
+    text-align: center;
+}
+
+.text-wlc h1 {
+    text-align: center;
+    font-family: 'Yaldevi', sans-serif;
+    color: var(--primary-color);
+    font-size: 480%;
+}
+
+.right-side {
+    font-family: 'Yaldevi', sans-serif;
+    font-size: 70px;
+}
+
+.left-side {
+    font-family: 'Yaldevi', sans-serif;
+    font-size: 70px;
+}
+
+.btnreserva {
+    width: 100%;
+    text-align: center;
+}
+
+.txtreserva {
+    padding-left: 2%;
+    position: relative
+}
