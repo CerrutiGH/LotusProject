@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LotusProject", "LotusProjec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryModels", "ClassLibraryModels\ClassLibraryModels.csproj", "{08BD5C26-F336-498F-8267-5E5429357086}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework", "EntityFramework\EntityFramework.csproj", "{10FFE5E8-F895-44AC-BCCE-A87767AE0BB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseActions", "DatabaseActions\DatabaseActions.csproj", "{0534CF6C-9110-4C8D-BD03-D6A71DBF19D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{08BD5C26-F336-498F-8267-5E5429357086}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08BD5C26-F336-498F-8267-5E5429357086}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08BD5C26-F336-498F-8267-5E5429357086}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10FFE5E8-F895-44AC-BCCE-A87767AE0BB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10FFE5E8-F895-44AC-BCCE-A87767AE0BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10FFE5E8-F895-44AC-BCCE-A87767AE0BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10FFE5E8-F895-44AC-BCCE-A87767AE0BB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0534CF6C-9110-4C8D-BD03-D6A71DBF19D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0534CF6C-9110-4C8D-BD03-D6A71DBF19D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0534CF6C-9110-4C8D-BD03-D6A71DBF19D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0534CF6C-9110-4C8D-BD03-D6A71DBF19D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
