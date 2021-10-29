@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ClassLibraryModels.InputModels;
+using ClassLibraryModels.ViewModels;
 using LotusProject.Data;
 using LotusProject.Domain.Entity;
 
@@ -29,5 +30,23 @@ namespace LotusProject.Actions
                 context.SaveChanges();
             }
         }
+
+        
+
+        
+
+
+        //public static List<ViewCustomer> ListCust()
+        //{
+        //    LotusContext db = new LotusContext();
+        //    var user = db.Customers.Select(c => new ViewCustomer
+        //    {
+        //        name = c.Name,
+        //        email = c.email
+        //    });
+        //    return user.ToList();
+        //}
+
+       
     }
 }

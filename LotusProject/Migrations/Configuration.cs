@@ -4,15 +4,16 @@
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using LotusProject.Data;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<LotusProject.Data.LotusContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<LotusContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(LotusProject.Data.LotusContext context)
+        protected override void Seed(LotusContext context)
         {
             //  This method will be called after migrating to the latest version.
 

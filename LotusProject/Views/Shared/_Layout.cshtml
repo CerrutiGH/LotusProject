@@ -84,15 +84,15 @@
             <div>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        @if (Session["emailSignIn"] != null)
+                        @if (Session["EmailLog"] != null)
                         {
                             <div class="center-content" style="background-color: #EFEAE5">
                                 <div class="ui simple dropdown nav-link drop">
-                                    <b>@Session["emailSignIn"]</b>
+                                    <b>@Session["EmailLog"]</b>
                                     <i class="dropdown icon"></i>
                                     <div class="menu" style="background-color: #2A435B">
                                         <div class="item" style="color: #EFEAE5"><b>@Html.ActionLink("Gerenciar conta", "MenageAccount", "Customer", new { EMAIL = Session["emailSignIn"] }, new { @class = "item" })</b></div>
-                                        <div class="item" style="color: #EFEAE5"><a href="@Url.Action("Logout","Customer")"><b>Logout</b></a></div>
+                                        <div class="item" style="color: #EFEAE5"><a href="@Url.Action("Logout","Home")"><b>Logout</b></a></div>
 
                                     </div>
                                 </div>
@@ -131,7 +131,7 @@
 
                         <div class="col-md-6 form-side">
 
-                            @using (Html.BeginForm("SignIn", "Customer", FormMethod.Post, new { @style = "width: 70%" }))
+                            @using (Html.BeginForm("SignIn", "Home", FormMethod.Post, new { @style = "width: 70%" }))
                             {
                                 <!--Form-->
 

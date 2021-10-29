@@ -18,7 +18,7 @@ namespace ClassLibraryModels.InputModels
 
         [Required(ErrorMessage = "O campo Sexo é obrigatório")]
         [Display(Name = "Sexo")]
-        public char sex { get; set; }
+        public string sex { get; set; }
 
         [Required(ErrorMessage = "O campo Email é obrigatório")]
         [Display(Name = "Email")]
