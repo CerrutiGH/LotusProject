@@ -9,7 +9,6 @@ namespace LotusProject.Domain.Entity
 {
     public class Employee : Entity
     {
-        public int Id { get; set; }
         public string name { get; set; }
         public string login { get; set; }
         [StringLength(1)]

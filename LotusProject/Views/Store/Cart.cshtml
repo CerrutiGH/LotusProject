@@ -1,0 +1,47 @@
+﻿
+@{
+
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    if (Session["cartUser"] == null)
+    {
+        Session["cartUser"] = new LotusProject.Domain.Entity.CartItens();
+    }
+    LotusProject.Domain.Entity.CartItens cart = (LotusProject.Domain.Entity.CartItens)Session["cartUser"];
+
+    if (IsPost)
+    {
+        var prodId = Request["ProductID"];
+        var prodName = Request["NameProduct"];
+        var prodPrice = Request["UnityPrice"];
+        cart.AdicionarItem(prodId.AsInt(), prodName, prodPrice.As)
+    }
+}
+<br />
+<br />
+
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Produto</th>
+            <th scope="col">Preço</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in cart.Itens)
+        {
+            <tr>
+                <th scope="row">@item.ProductID</th>
+                <td>@item.NameProduct</td>
+                <td>@item.UnityPrice</td>
+            </tr>
+        }
+        <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td>Total: R$@cart.ValorTotal</td>
+        </tr>
+
+    </tbody>
+</table>

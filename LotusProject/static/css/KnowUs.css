@@ -1,0 +1,142 @@
+﻿:root {
+    --secundary-color: #2A435B;
+    --primary-color: #b492ff;
+    --bege-color: #EFEAE5
+}
+
+.photo {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.client-say h1 {
+    color: var(--bege-color);
+}
+
+.text {
+    margin: auto;
+}
+.square {
+    position: relative;
+    
+}
+
+.align-square-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 90%;
+    width: 90%;
+    background-color: var(--secundary-color );
+    border:thick;
+    border-color: var(--bege-color);
+}
+    .align-square-left h5 {
+        color: var(--bege-color );
+        text-align: left;
+        font-size: 110%;
+    }
+
+    .align-square-left h4 {
+        color: var(--primary-color );
+        text-align: left;
+        font-size: 110%;
+    }
+
+.align-square h1 {
+    color: var(--bege-color );
+    font-size: 300%
+}
+
+    .align-square {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+.div-text-internal h1 {
+    color: var(--bege-color );
+}
+
+.div-text-internal h5 {
+    text-align: justify;
+    color: var(--bege-color );
+}
+
+
+.div-text-internal {
+    margin: 10%
+}
+
+.columns-client {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-left: solid;
+    border-right: solid;
+    border-width: 1px;
+    margin-bottom: 60px;
+}
+
+.text-client {
+    color: var(--primary-color );
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-client p {
+    color: var(--bege-color );
+    font-family: 'Poppins', sans-serif;
+}
+
+.photo-client {
+    margin-bottom: 20px;
+    
+}
+
+    .photo-client:hover {
+        border: solid;
+        border-color: var(--primary-color);
+        border-width: 3px;
+        transition: 0.1s;
+    }
+
+.btn-outline-primary {
+    border-color: #2A435B;
+    color: #2A435B;
+}
+
+    .btn-outline-primary:hover {
+        border-color: #EFEAE5 !important;
+        color: #EFEAE5 !important;
+        background-color: #2A435B;
+    }
+
+
+[data-anime] {
+    opacity: 0;
+    transition: .3s;
+}
+
+[data-anime="left"] {
+    transform: translate3d(-100%, 0, 0);
+}
+
+[data-anime="right"] {
+    transform: translate3d(100%, 0, 0);
+}
+
+[data-anime="botton"] {
+    transform: translate3d(0, 100%, 0);
+}
+
+[data-anime="top"] {
+    transform: translate3d(0, -100%, 0);
+}
+
+[data-anime].animate {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+}

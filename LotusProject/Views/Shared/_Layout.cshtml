@@ -1,4 +1,8 @@
 ﻿@model ClassLibraryModels.InputModels.InputCustomer
+
+@{ 
+ClassLibraryModels.ViewModels.Cep cep = ViewBag.Cep;
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +38,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <b><a class="nav-link" href="@Url.Action( "InitialPage", "Home")"><b>Início</b></a></b>
+                    <b><a class="nav-link" href="@Url.Action( "Home", "Home")"><b>Início</b></a></b>
                 </li>
                 <li class="nav-item">
                     <b> <a class="nav-link" href="@Url.Action( "InitialPage", "Home")"><b>Reserva</b></a></b>
@@ -193,7 +197,7 @@
 
                         <div class="col-md-6 form-side">
 
-
+                           
                             <!--Form-->
                             @using (Html.BeginForm("InsertCustomer", "Home", FormMethod.Post, new { @style = "width: 70%" }))
                             {
@@ -268,6 +272,8 @@
                                     </div>
                                 </div>
 
+
+
                                 <button type="submit" class="btn btn-outline-primary" style="width:100%"><b>CADASTRAR</b></button>
 
                                 <br /><br />
@@ -279,6 +285,7 @@
                                 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
                             }
                             <!--Form Final-->
+
                         </div>
 
 

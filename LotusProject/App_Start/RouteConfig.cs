@@ -18,6 +18,14 @@ namespace LotusProject
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Home", id = UrlParameter.Optional }
             );
+
+            //    routes.MapRoute(
+
+            //        name: "RequestCep",
+            //        url: "resquestCep",
+            //        defaults: new {controller = "Cep", action = "CepAct"}
+            //        );
+            //}
         }
     }
 }

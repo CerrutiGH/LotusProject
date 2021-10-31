@@ -10,7 +10,6 @@ namespace LotusProject.Domain.Entity
 {
     public class Customer : Entity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         [StringLength(1)]
         [Column(TypeName = "char")]

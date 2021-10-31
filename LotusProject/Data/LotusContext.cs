@@ -13,8 +13,10 @@ namespace LotusProject.Data
     public class LotusContext : DbContext
     {
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<Employee> Employee { get; set; }
-        public DbSet<Products> Product { get; set; }
+        public DbSet<Employee> employees { get; set; }
+        public DbSet<Products> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Inventory> Inventories { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
