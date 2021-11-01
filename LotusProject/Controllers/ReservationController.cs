@@ -6,15 +6,10 @@ using System.Web.Mvc;
 
 namespace LotusProject.Controllers
 {
-    public class StoreController : Controller
+    public class ReservationController : Controller
     {
-        // GET: Store
-        public ActionResult Cart()
-        {
-            return View();
-        }
-        
-        public ActionResult MainStore()
+        // GET: Reservation
+        public ActionResult Index()
         {
             return View();
         }

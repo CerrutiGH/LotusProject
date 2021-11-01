@@ -17,8 +17,6 @@ namespace LotusProject.Controllers
         [HttpPost]
         public ActionResult SignIn()
         {
-            //var Sign = custact.SignIn(customer);
-            
             return RedirectToAction("About", "Home");
         }
 
