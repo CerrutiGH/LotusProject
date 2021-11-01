@@ -34,6 +34,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\LotusProject.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,12 +48,6 @@
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
@@ -69,9 +64,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MySql.Data, Version=8.0.27.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.27\lib\net48\MySql.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="MySql.Data.EntityFramework, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.EntityFramework.8.0.11\lib\net452\MySql.Data.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -174,47 +166,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actions\CustomerAct.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
-    <Compile Include="Data\LotusContext.cs" />
-    <Compile Include="Domain\Entity\Cart.cs" />
-    <Compile Include="Domain\Entity\CartItens.cs" />
-    <Compile Include="Domain\Entity\Category.cs" />
-    <Compile Include="Domain\Entity\Customer.cs" />
-    <Compile Include="Domain\Entity\Employee.cs" />
-    <Compile Include="Domain\Entity\Entity.cs" />
-    <Compile Include="Domain\Entity\Inventory.cs" />
-    <Compile Include="Domain\Entity\Products.cs" />
-    <Compile Include="Domain\Entity\Qualitative.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202110281726241_TableCostumer.cs" />
-    <Compile Include="Migrations\202110281726241_TableCostumer.designer.cs">
-      <DependentUpon>202110281726241_TableCostumer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202110281853410_testeSex.cs" />
-    <Compile Include="Migrations\202110281853410_testeSex.designer.cs">
-      <DependentUpon>202110281853410_testeSex.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202110282038070_addEmployee.cs" />
-    <Compile Include="Migrations\202110282038070_addEmployee.designer.cs">
-      <DependentUpon>202110282038070_addEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202110291552383_addTableProduct.cs" />
-    <Compile Include="Migrations\202110291552383_addTableProduct.Designer.cs">
-      <DependentUpon>202110291552383_addTableProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202110291554520_alterproduct.cs" />
-    <Compile Include="Migrations\202110291554520_alterproduct.Designer.cs">
-      <DependentUpon>202110291554520_alterproduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -284,23 +244,6 @@
       <Project>{08bd5c26-f336-498f-8267-5e5429357086}</Project>
       <Name>ClassLibraryModels</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202110281726241_TableCostumer.resx">
-      <DependentUpon>202110281726241_TableCostumer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202110281853410_testeSex.resx">
-      <DependentUpon>202110281853410_testeSex.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202110282038070_addEmployee.resx">
-      <DependentUpon>202110282038070_addEmployee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202110291552383_addTableProduct.resx">
-      <DependentUpon>202110291552383_addTableProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202110291554520_alterproduct.resx">
-      <DependentUpon>202110291554520_alterproduct.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
