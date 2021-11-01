@@ -1,8 +1,6 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using ClassLibraryModels.InputModels;
-using LotusProject.Data;
-using LotusProject.Actions;
 using ClassLibraryModels.ViewModels;
 
 
@@ -13,8 +11,6 @@ namespace LotusProject.Controllers
         [HttpPost]
         public ActionResult InsertCustomer(InputCustomer customer, string cep)
         {
-            ViewBag.Cep = Cep.Search(cep);
-            CustomerAct.InsertCust(customer);
             return View();
         }
 
