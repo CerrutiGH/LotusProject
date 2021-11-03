@@ -198,6 +198,7 @@
     <Content Include="static\css\styleLayout.css" />
     <Content Include="static\css\styleLayoutAdm.css" />
     <Content Include="static\css\StyleReservation.css" />
+    <Content Include="static\css\StyleStore.css" />
     <Content Include="static\Images\Alberto Costa.png" />
     <Content Include="static\Images\bg-flowers.png" />
     <Content Include="static\Images\Design_Logo_-_TCC__1_-removebg-preview.png" />
@@ -268,7 +269,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>2772</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44366/</IISUrl>
+          <IISUrl>http://localhost:51600/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

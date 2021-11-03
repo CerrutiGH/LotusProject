@@ -191,3 +191,11 @@ nav.navbar.navbar-expand-lg.navbar-light.fluid {
 .footer ul li a:hover {
     color: var(--primary-color)
 }
+
+.navbar-lateral{
+    position: fixed
+}
+
+cont p{
+    margin-left: 1000px;
+}

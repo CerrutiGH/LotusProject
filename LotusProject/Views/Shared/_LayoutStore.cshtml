@@ -112,7 +112,7 @@
 
     </nav>
 
-    <div class="ui inverted vertical menu">
+    <div class="ui inverted vertical menu navbar-lateral">
         <a class="item" href="">
             @*Colocar montagem de kit*@
             <b>Produtos</b>
@@ -151,13 +151,11 @@
             Difusores
         </a>
     </div>
+    <div>
+        @RenderBody()
+    </div>
 
-    @RenderBody()
-
-
-
-
-    <div class="footer">
+    <div class="footer" style="padding-bottom: 0">
         <div class="container">
             <div class="card-footer" style="text-align: center; height:10px">
             </div>
@@ -221,6 +219,7 @@
         </div>
     </div>
 
+    
 
 </body>
 
