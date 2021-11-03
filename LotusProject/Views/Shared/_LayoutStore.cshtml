@@ -2,12 +2,227 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+
+    <!-- Semantic UI -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.0/semantic.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.0/semantic.min.js"></script>
+    <script>
+        $('.ui.dropdown')
+            .dropdown()
+            ;
+    </script>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - LotusSPA</title>
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/static/css/LayoutStore.css">
 </head>
+
 <body>
-    <div>
-        @RenderBody()
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fluid fixed-top">
+        <div class="esp">
+            <a href="~/Store/MainStore"><img src="~/static/Images/LogoForBlue.png" height="50" width="50"></a>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+            @*<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <b><a class="nav-link" href="@Url.Action( "Home", "Home")"><b>Início</b></a></b>
+                    </li>
+                    <li class="nav-item">
+                        <b> <a class="nav-link" href="@Url.Action( "InitialPage", "Home")"><b>Reserva</b></a></b>
+                    </li>
+                    <li class="nav-item">
+                        <b> <a class="nav-link" href="@Url.Action( "KnowUs", "Home")"><b>Contato</b></a></b>
+                    </li>
+                </ul>*@
+
+
+            <form class="d-flex center-content">
+                <div class="ui category search">
+                    <div class="ui icon input">
+                        <input class="prompt" type="text" placeholder="Procurar produtos...">
+                        <i class="search icon"></i>
+                    </div>
+                    <div class="results"></div>
+                </div>
+            </form>
+            &nbsp;&nbsp;
+
+
+
+            <div class="loc">
+                <button class="ui icon button nav-link buttoncarcolor loc">
+                    <i class="map marker alternate icon"></i>
+                </button>
+            </div>
+
+            <div class="heart">
+                <button class="ui icon button nav-link buttoncarcolor loc">
+                    <i class="heart icon"></i>
+                </button>
+            </div>
+
+            <div class="center-content">
+                <div class="ui vertical animated button nav-link buttoncarcolor bord">
+                    <div class="visible content"><i class="shop icon"></i></div>
+                    <div class="hidden content">
+                        Carrinho
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        @if (Session["EmailLog"] != null)
+                        {
+                            <div class="center-content" style="background-color: #EFEAE5">
+                                <div class="ui simple dropdown nav-link drop">
+                                    <b>@Session["EmailLog"]</b>
+                                    <i class="dropdown icon"></i>
+                                    <div class="menu" style="background-color: #2A435B">
+                                        <div class="item" style="color: #EFEAE5"><b>@Html.ActionLink("Gerenciar conta", "MenageAccount", "Customer", new { EMAIL = Session["emailSignIn"] }, new { @class = "item" })</b></div>
+                                        <div class="item" style="color: #EFEAE5"><a href="@Url.Action("Logout","Home")"><b>Logout</b></a></div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <a></a>
+                        }
+                        else
+                        {
+                            <a class="nav-link bord" href="" data-bs-toggle="modal" data-bs-target="#ModalSignIn"><b>Sign In</b></a>
+                        }
+
+                    </li>
+                </ul>
+            </div>
+
+    </nav>
+
+    <div class="ui inverted vertical menu">
+        <a class="item" href="">
+            @*Colocar montagem de kit*@
+            <b>Produtos</b>
+        </a>
+        <a class="item">
+            Toalhas
+        </a>
+        <a class="item">
+            Sabonetes
+        </a>
+        <a class="item">
+            Hidratantes
+        </a>
+        <a class="item">
+            Velas
+        </a>
+        <a class="item">
+            Sais de Banho
+        </a>
+        <a class="item">
+            Massageadores
+        </a>
+        <a class="item">
+            Esfoliantes
+        </a>
+        <a class="item">
+            Óleos Essenciais
+        </a>
+        <a class="item">
+            Incensos
+        </a>
+        <a class="item">
+            Máscaras
+        </a>
+        <a class="item">
+            Difusores
+        </a>
     </div>
+
+    @RenderBody()
+
+
+
+
+    <div class="footer">
+        <div class="container">
+            <div class="card-footer" style="text-align: center; height:10px">
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <img src="~/static/Images/LogoForBlue.png" width="70" height="70" />
+                    <h5>Lotus SPA</h5>
+                </div>
+                <div class="col-4">
+                    <h5>Siga-nos</h5>
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/lotuss.spa">
+                                <i class="facebook icon"></i>
+                                Lotus SPA
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/lotuss.spaa/">
+                                <i class="instagram icon"></i>
+                                lotuss.spaa
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/LotusSPA9">
+                                <i class="twitter icon"></i>
+                                Twitter
+                            </a>
+                        </li>
+                    </ul>
+
+
+                </div>
+                <div class="col-4">
+                    <h5>Conheça</h5>
+                    <ul>
+                        <li>
+                            <a href="~/Store/MainStore">
+                                <i class="shopping bag icon"></i>
+                                Acesso a loja
+                            </a>
+                        </li>
+                        <li>
+                            <a href="~/Reservation/Reservation">
+                                <i class="calendar alternate icon"></i>
+                                Faça uma reserva
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="bullhorn icon"></i>
+                                Ajuda
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-footer" style="text-align: center">
+                Copyright &copy; @DateTime.Now.Year - Lotus SPA
+            </div>
+        </div>
+    </div>
+
+
 </body>
+
+
 </html>

@@ -194,6 +194,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="static\css\InitialPage.css" />
     <Content Include="static\css\KnowUs.css" />
+    <Content Include="static\css\LayoutStore.css" />
     <Content Include="static\css\styleLayout.css" />
     <Content Include="static\css\styleLayoutAdm.css" />
     <Content Include="static\css\StyleReservation.css" />
