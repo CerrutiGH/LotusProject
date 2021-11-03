@@ -4,10 +4,33 @@
 }
 
 
-.photosvglogin {
-    width: 90%;
-    height: 90%
+
+.footer {
+    background-color: var(--secundary-color);
+    color: antiquewhite;
+    text-decoration: none !important;
 }
+    .footer ul {
+        text-align: start;
+        padding-inline-start: 0;
+    }
+    .footer ul li {
+        list-style: none;
+    }
+
+        .footer ul li a {
+            text-decoration: none;
+            color: white;
+        }
+            .footer ul li a:hover{
+                color: var(--primary-color)
+            }
+
+
+            .photosvglogin {
+                width: 90%;
+                height: 90%
+            }
 
 .custom-modal {
     margin-left: 1%;
@@ -49,18 +72,15 @@
 }
 
 .nav-link:hover {
-    border: solid;
-    border-width: 1px;
+    border-bottom-width: 3px;
     color: var(--primary-color);
-    border-color: var(--primary-color);
-    border-radius: 8px;
+    border-bottom-color: var(--primary-color);
 }
 
 .nav-link {
-    border: solid;
-    border-color: var(--secundary-color);
-    border-width: 1px;
-    border-radius: 6px;
+    border-bottom: solid;
+    border-bottom-color: var(--secundary-color);
+    border-bottom-width: 3px;
     margin-right: 15px;
     margin-left: 15px;
     color: var(--primary-color) !important;

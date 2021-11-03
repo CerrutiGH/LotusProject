@@ -1,0 +1,20 @@
+﻿:root {
+    --secundary-color: #2A435B;
+    --primary-color: #b492ff;
+    --tertiary-color: #EFEAE5;
+    --nav-color: #233240;
+    --red-color: #540b0e;
+}
+
+
+.card-top{
+    padding-top: 50px;
+    background: var(--secundary-color);
+    color: var(--primary-color);
+}
+
+.tratamentos {
+    padding-top: 10px;
+    background: var(--secundary-color);
+
+}
