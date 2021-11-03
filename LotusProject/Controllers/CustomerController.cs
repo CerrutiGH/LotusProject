@@ -9,16 +9,14 @@ namespace LotusProject.Controllers
     public class CustomerController : Controller
     {
         [HttpPost]
-        public ActionResult InsertCustomer(InputCustomer customer, string cep)
+        public ActionResult InsertCustomer()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult SignIn(InputLoginCustomer customer)
+        public ActionResult SignIn()
         {
-            //var Sign = custact.SignIn(customer);
-          
             return RedirectToAction("About", "Home");
         }
 

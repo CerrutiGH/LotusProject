@@ -55,11 +55,15 @@
   <ItemGroup>
     <Compile Include="InputModels\InputCustomer.cs" />
     <Compile Include="InputModels\InputLoginCustomer.cs" />
+    <Compile Include="InputModels\InputProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Cep.cs" />
     <Compile Include="ViewModels\ViewCustomer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
