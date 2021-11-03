@@ -196,6 +196,7 @@
     <Content Include="static\css\KnowUs.css" />
     <Content Include="static\css\styleLayout.css" />
     <Content Include="static\css\styleLayoutAdm.css" />
+    <Content Include="static\css\StyleReservation.css" />
     <Content Include="static\Images\Alberto Costa.png" />
     <Content Include="static\Images\bg-flowers.png" />
     <Content Include="static\Images\Design_Logo_-_TCC__1_-removebg-preview.png" />
@@ -231,11 +232,11 @@
     <Content Include="Views\Store\Cart.cshtml" />
     <Content Include="Views\Shared\_LayoutStore.cshtml" />
     <Content Include="Views\Store\MainStore.cshtml" />
+    <Content Include="Views\Reservation\Reservation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Customer\" />
-    <Folder Include="Views\Reservation\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

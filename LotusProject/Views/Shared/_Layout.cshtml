@@ -46,44 +46,14 @@ ClassLibraryModels.ViewModels.Cep cep = ViewBag.Cep;
                 <li class="nav-item">
                     <b> <a class="nav-link" href="@Url.Action( "KnowUs", "Home")"><b>Contato</b></a></b>
                 </li>
-                <li>
-                    <div class="center-content">
-                        <div class="ui simple dropdown nav-link drop">
-                            <b>Categorias</b>
-                            <i class="dropdown icon"></i>
-                            <div class="menu">
-                                <div class="item"><b>Beleza</b></div>
-                                <div class="item"><b>Hidratação</b></div>
-                                <div class="item"><b>Banho</b></div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
+                
 
             </ul>
 
-            <div class=" center-content">
-                <div class="ui vertical animated button nav-link buttoncarcolor">
-                    <div class="visible content"><i class="shop icon"></i></div>
-                    <div class="hidden content">
-                        Carrinho
-                    </div>
-                </div>
-            </div>
+           
 
 
-            <form class="d-flex center-content">
-
-
-
-                <div class="ui category search">
-                    <div class="ui icon input">
-                        <input class="prompt" type="text" placeholder="Search products...">
-                        <i class="search icon"></i>
-                    </div>
-                    <div class="results"></div>
-                </div>
-            </form>
+            
             &nbsp;&nbsp;
             <div>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -304,14 +274,81 @@ ClassLibraryModels.ViewModels.Cep cep = ViewBag.Cep;
     </div>
 
 
-    <div class="body-content">
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    
+        <div class="footer">
+            <div class="container">
+                <div class="card-footer" style="text-align: center; height:10px">
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <img src="~/static/Images/LogoForBlue.png" width="70" height="70" />
+                        <h5>Lotus SPA</h5>
+                    </div>
+                    <div class="col-4">
 
-    @Scripts.Render("~/bundles/jquery")
-    @RenderSection("scripts", required: false)
+                        <h5>Siga-nos</h5>
+                        <ul>
+                            <li>
+                                <a href="https://www.facebook.com/lotuss.spa">
+                                    <i class="facebook icon"></i>
+                                    Lotus SPA
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/lotuss.spaa/">
+                                    <i class="instagram icon"></i>
+                                    lotuss.spaa
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="https://twitter.com/LotusSPA9">
+                                    <i class="twitter icon"></i>
+                                    Twitter
+                                </a>
+                            </li>
+                        </ul>
+
+
+
+
+
+                    </div>
+
+                    <div class="col-4">
+                        <h5>Conheça</h5>
+                        <ul>
+                            <li>
+                                <a href="~/Store/MainStore">
+                                    <i class="shopping bag icon"></i>
+                                    Acesso a loja
+                                </a>
+                            </li>
+                            <li>
+                                <a href="~/Reservation/Reservation">
+                                    <i class="calendar alternate icon"></i>
+                                    Faça uma reserva
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="bullhorn icon"></i>
+                                    Ajuda
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-footer" style="text-align: center">
+                    Copyright &copy; @DateTime.Now.Year - Lotus SPA
+                </div>
+            </div>
+        </div>
+    
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
 </body>
 </html>
