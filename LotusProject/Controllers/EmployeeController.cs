@@ -9,7 +9,12 @@ namespace LotusProject.Controllers
     public class EmployeeController : Controller
     {
         // GET: Employee
-        public ActionResult AdministrativeCenterEmployee()
+        public ActionResult Dashboard()
+        {
+            return View();
+        }
+
+        public ActionResult LogInEmployee()
         {
             return View();
         }

@@ -196,6 +196,7 @@
     <Content Include="static\css\InitialPage.css" />
     <Content Include="static\css\KnowUs.css" />
     <Content Include="static\css\LayoutStore.css" />
+    <Content Include="static\css\styleDashboard.css" />
     <Content Include="static\css\styleLayout.css" />
     <Content Include="static\css\styleLayoutAdm.css" />
     <Content Include="static\css\StyleReservation.css" />
@@ -237,7 +238,8 @@
     <Content Include="Views\Store\MainStore.cshtml" />
     <Content Include="Views\Reservation\Reservation.cshtml" />
     <Content Include="Views\Shared\_LayoutEmployee.cshtml" />
-    <Content Include="Views\Employee\AdministrativeCenterEmployee.cshtml" />
+    <Content Include="Views\Employee\Dashboard.cshtml" />
+    <Content Include="Views\Employee\LogInEmployee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -7,14 +7,3 @@
 }
 
 
-.card-top{
-    padding-top: 50px;
-    background: var(--secundary-color);
-    color: var(--primary-color);
-}
-
-.tratamentos {
-    padding-top: 10px;
-    background: var(--secundary-color);
-
-}
