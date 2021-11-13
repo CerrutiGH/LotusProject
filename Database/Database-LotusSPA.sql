@@ -75,6 +75,7 @@ ResCode int primary key auto_increment,
 ResValidity datetime not null,
 ResPrice decimal(8,2) not null,
 ResAmount int not null,
+ResStatus char(3) not null, -- can(Canceled), occ(Occuring), pen(Pending), ans(Answered)
 IsDeleted char(3) not null default 'No',
 CustCPF varchar(14) not null references tbCustomer(CustCPF) on update cascade,
 PackCode int not null references tbPackage(PackCode) on update cascade,
