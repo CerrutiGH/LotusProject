@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.902
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LotusProject", "LotusProject\LotusProject.csproj", "{F746A9D7-00BE-46A4-ACD5-281EE3C86156}"
 EndProject
@@ -11,10 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryConnection", "ClassLibraryConnection\ClassLibraryConnection.csproj", "{7CE90D2D-544A-4E08-8A4B-3A56F43F656C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryDatabaseActions", "ClassLibraryDatabaseActions\ClassLibraryDatabaseActions.csproj", "{C72992BE-FCAC-40C3-ABED-3B0EAFDC027D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,14 +26,6 @@ Global
 		{08BD5C26-F336-498F-8267-5E5429357086}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08BD5C26-F336-498F-8267-5E5429357086}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08BD5C26-F336-498F-8267-5E5429357086}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7CE90D2D-544A-4E08-8A4B-3A56F43F656C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7CE90D2D-544A-4E08-8A4B-3A56F43F656C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7CE90D2D-544A-4E08-8A4B-3A56F43F656C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7CE90D2D-544A-4E08-8A4B-3A56F43F656C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C72992BE-FCAC-40C3-ABED-3B0EAFDC027D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C72992BE-FCAC-40C3-ABED-3B0EAFDC027D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C72992BE-FCAC-40C3-ABED-3B0EAFDC027D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C72992BE-FCAC-40C3-ABED-3B0EAFDC027D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

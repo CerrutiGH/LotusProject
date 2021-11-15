@@ -6,28 +6,15 @@
     --red-color: #540b0e;
 }
 
-.cards {
-   padding-top: 70px;
-   padding-bottom: 70px;
-   justify-content: center;
+
+.card-top{
+    padding-top: 50px;
+    background: var(--secundary-color);
+    color: var(--primary-color);
 }
 
-.main-cards {
-    border-radius: 15px !important;
-    width: 250px !important;
-}
+.tratamentos {
+    padding-top: 10px;
+    background: var(--secundary-color);
 
-.image img{
-    border-top-left-radius: 15px !important;
-    border-top-right-radius: 15px !important;
-    width: 50px;
-    height: 50px;
-}
-
-.price {
-    height: 36px;
-    font-size: 15px;
-    padding-top: 7px;
-    padding-right: 10px;
-    color: var(--secundary-color);
 }
