@@ -1,0 +1,66 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Yaldevi:wght@200&display=swap');
+
+:root {
+    --secundary-color: #2A435B;
+    --primary-color: #b492ff;
+    --tertiary-color: #EFEAE5;
+    --nav-color: #233240;
+    --red-color: #540b0e;
+}
+
+.card-top-page {
+    background-color: var(--nav-color);
+    padding: 40px;
+    max-height: 200px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    min-height: 130px;
+    border-radius: 9px;
+    color: white;
+    font-family: 'Red Hat Mono', monospace !important;
+}
+
+
+    .card-top-page h6 {
+        color: #b492ff;
+        font-family: 'Red Hat Mono', monospace !important;
+
+    }
+
+    .card-top-page h3 {
+        color: white;
+        font-family: 'Red Hat Mono', monospace !important;
+    }
+
+    .card-top-page span {
+        color: white;
+        font-family: 'Red Hat Mono', monospace !important;
+        font-size:30px;
+    }
+
+
+.card-chart {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 9px;
+    background-color: var(--nav-color);
+    border-radius: 9px
+}
+
+.card-employee {
+    background-color: var(--nav-color);
+    min-height: 430px;
+    border-radius: 9px;
+    max-height: 430px;
+}
+.card-reserve {
+    background-color: var(--nav-color);
+    border-radius: 9px;
+    color: white
+}
+
+
+.img-welcome {
+    width: 130px;
+    height: 130px;
+}

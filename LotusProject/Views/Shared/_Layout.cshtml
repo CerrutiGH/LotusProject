@@ -16,6 +16,7 @@ ClassLibraryModels.ViewModels.Cep cep = ViewBag.Cep;
         $('.ui.dropdown')
             .dropdown()
             ;
+
     </script>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -25,6 +26,8 @@ ClassLibraryModels.ViewModels.Cep cep = ViewBag.Cep;
     <title>@ViewBag.Title - LotusSPA</title>
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="~/static/css/styleLayout.css">
+
+
 </head>
 <body>
 
@@ -38,13 +41,13 @@ ClassLibraryModels.ViewModels.Cep cep = ViewBag.Cep;
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <b><a class="nav-link" href="@Url.Action( "Home", "Home")"><b>Início</b></a></b>
+                    <a class="nav-link menu-font" href="@Url.Action( "Home", "Home")">Início</a>
                 </li>
                 <li class="nav-item">
-                    <b> <a class="nav-link" href="@Url.Action( "InitialPage", "Home")"><b>Reserva</b></a></b>
+                    <a class="nav-link menu-font" href="@Url.Action( "InitialPage", "Home")">Reserva</a>
                 </li>
                 <li class="nav-item">
-                    <b> <a class="nav-link" href="@Url.Action( "KnowUs", "Home")"><b>Contato</b></a></b>
+                    <a class="nav-link menu-font" href="@Url.Action( "KnowUs", "Home")">Contato</a>
                 </li>
                 
 
@@ -65,8 +68,8 @@ ClassLibraryModels.ViewModels.Cep cep = ViewBag.Cep;
                                     <b>@Session["EmailLog"]</b>
                                     <i class="dropdown icon"></i>
                                     <div class="menu" style="background-color: #2A435B">
-                                        <div class="item" style="color: #EFEAE5"><b>@Html.ActionLink("Gerenciar conta", "MenageAccount", "Customer", new { EMAIL = Session["emailSignIn"] }, new { @class = "item" })</b></div>
-                                        <div class="item" style="color: #EFEAE5"><a href="@Url.Action("Logout","Home")"><b>Logout</b></a></div>
+                                        <div class="item" style="color: #EFEAE5">@Html.ActionLink("Gerenciar conta", "MenageAccount", "Customer", new { EMAIL = Session["emailSignIn"] }, new { @class = "item menu-font" })</div>
+                                        <div class="item" style="color: #EFEAE5"><a href="@Url.Action("Logout","Home")" class="menu-font">Logout</a></div>
 
                                     </div>
                                 </div>
@@ -75,7 +78,7 @@ ClassLibraryModels.ViewModels.Cep cep = ViewBag.Cep;
                         }
                         else
                         {
-                            <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#ModalSignIn"><b>Sign In</b></a>
+                            <a class="nav-link menu-font" href="" data-bs-toggle="modal" data-bs-target="#ModalSignIn">Sign In</a>
                         }
 
                     </li>
@@ -267,7 +270,7 @@ ClassLibraryModels.ViewModels.Cep cep = ViewBag.Cep;
     <!--Modal Final-->
 
 
-    <div>
+    <div style="background-color: #2A435B">
 
         @RenderBody()
 

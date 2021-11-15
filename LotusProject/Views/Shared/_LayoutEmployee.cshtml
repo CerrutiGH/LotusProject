@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.0/semantic.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.0/semantic.css" rel="stylesheet" />
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+   
+
+    <link rel="stylesheet" href="~/static/css/styleLayoutAdm.css">
+    <title>@ViewBag.Title - Funcionários</title>
+
+</head>
+
+
+<body>
+
+
+
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="image">
+                        <img src="~/static/Images/Design_Logo_-_TCC__1_-removebg-preview.png" style="width: 40px; height: 40px">
+                    </span>
+                    <span class="title">Central Lotus</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="title">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="cube-outline"></ion-icon></span>
+                    <span class="title">Pedidos</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="calendar-outline"></ion-icon></span>
+                    <span class="title">Reservas</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                    <span class="title">Funcionários</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="bag-handle-outline"></ion-icon></span>
+                    <span class="title">Produtos</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                    <span class="title">Sign Out</span>
+                </a>
+            </li>
+        </ul>
+        <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="topbar">
+            
+
+            <div class="title-page">
+                <p>@ViewBag.Title</p>
+            </div>
+
+            <div class="user-account">
+                <p>Gabriel Cerruti</p>
+            </div>
+        </div>
+        <div class="content-main">
+        @RenderBody()
+        </div>
+
+        <footer>
+
+
+            <div>
+
+                <center>
+                    <img src="~/static/Images/LogoForBege.png" height="40" width="40" style="">
+                    <p>&copy; @DateTime.Now.Year - Lotus SPA</p>
+                </center>
+            </div>
+        </footer>
+    </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jqueryval")
+    @RenderSection("scripts", required: false)
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
+<script>
+    let toggle = document.querySelector('.toggle');
+    let navigation = document.querySelector('.navigation');
+    let main = document.querySelector('.main');
+
+    toggle.onclick = function () {
+        main.classList.toggle('active')
+        navigation.classList.toggle('active')
+    }
+
+
+    let list = document.querySelectorAll('.navigation li');
+    function activeLink(){
+        list.forEach((item) =>
+        item.classList.remove('hovered'));
+        this.classList.add('hovered');
+    }
+
+    list.forEach((item) =>
+        item.addEventListener('mouseover', activeLink));
+    
+</script>
