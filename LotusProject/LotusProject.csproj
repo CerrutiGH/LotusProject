@@ -235,6 +235,7 @@
     <Content Include="Views\Employee\LogInEmployee.cshtml" />
     <Content Include="Views\Customer\ViewLoginCustomer.cshtml" />
     <Content Include="Views\Customer\ViewRegisterCustomer.cshtml" />
+    <Content Include="Views\Store\ViewProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
