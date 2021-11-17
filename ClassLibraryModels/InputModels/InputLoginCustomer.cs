@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace ClassLibraryModels.InputModels
 {
@@ -11,6 +12,7 @@ namespace ClassLibraryModels.InputModels
     {
         [Required(ErrorMessage = "O campo Email é obrigatório")]
         [Display(Name = "Email")]
+        //[Remote("CheckEmail", "Customer", ErrorMessage = "Email já existe")]
         public string email { get; set; }
 
         [Required(ErrorMessage = "O campo Senha é obrigatório")]
