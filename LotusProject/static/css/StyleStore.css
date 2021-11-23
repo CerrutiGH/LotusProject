@@ -23,3 +23,7 @@ div.image img {
     border-top-left-radius: 15px !important;
     border-top-right-radius: 15px !important
 }
+
+star.outline.icon {
+    font-size: 10px !important
+}
