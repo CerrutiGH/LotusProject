@@ -1,3 +1,5 @@
+SET SQL_SAFE_UPDATES=0;
+
 Delimiter $$
 CREATE PROCEDURE spUpdateCustomer(varCustCPF varchar(14), varCustName varchar(150), varCustDtNasc datetime,
 varCustGender char(1), varCustPassword varchar(18), varCustNumberAddress integer, varCEP varchar(10))
@@ -69,7 +71,7 @@ BEGIN
 SELECT * FROM vwDataEmployee WHERE EmpLogin = varLogin;
 END
 $$ DELIMITER ;
-CALL spSelectEmployeeData("Cerriti");
+
 
 
 
@@ -239,7 +241,7 @@ END IF;
 END; 
 $$ DELIMITER ;
 
-CALL spChangeStatusReserve (5, 'A');
+CALL spChangeStatusReserve (2, 'C');
 
 
 /*CALL PROCEDURES*/

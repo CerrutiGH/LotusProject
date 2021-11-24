@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Funcionários";
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="~/static/Images/Lotus SPA.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="~/static/Images/Lotus SPA.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="~/static/Images/Lotus SPA.png" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="row" style="padding-top: 10px; padding-left: 10px; padding-right: 10px">
+    <div class="card card-reserve" style="top: 10px; background-color: #233240; ">
+        <div class="card-header text-center" style="color: white">
+            Funcionários
+        </div>
+        <div class="card-body">
+            <table class="table striped" style="color: white">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td style="text-align: end"><button class="positive ui button" style="height: 30px; font-size: 12px;">Editar</button> &nbsp; <button class="negative ui button" style="height: 30px; font-size: 12px;">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>afat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>atwitter</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="card-footer text-center">
+            <a href="#" style="color: white">Ver todos</a>
+        </div>
+    </div>
+</div>

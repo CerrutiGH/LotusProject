@@ -202,7 +202,7 @@
                 <tr>
                     <td style="color: white">@item.custname</td>
                     <td style="color: white">@item.resvalidity</td>
-                    @if (item.statusreserve == "F")
+                    @if (item.statusreserve == "A")
                     {
                     <td style="color: white"><span class="text-success">●</span> Atendido</td>
                     }
@@ -267,7 +267,7 @@
             labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
             datasets: [{
                 label: "Vendas - @DateTime.Now.Year",
-                data: [223, 123, 234, 133, 200, 150, 190, 180, 300, 222, @Nov, @Dec)],
+                data: [223, 123, 234, 133, 200, 150, 190, 180, 300, 222, @Nov, @Dec],
                 borderWidth: 1,
                 borderColor: '#b492ff',
                 fontColor: '#b492ff'

@@ -127,7 +127,7 @@ OpPayCode varchar(20) not null references tbOptionPay(OpPayCode) on update casca
 CustCPF varchar(14) not null references tbCustomer(CustCPF) on update cascade
 );
 
-  
+  /*
 SELECT * FROM tbCep;            -- Used/Done     
 SELECT * FROM tbRole;           -- Used/Done 
 SELECT * FROM tbCustomer;       -- Done
@@ -144,4 +144,4 @@ SELECT * FROM tbReserve;		-- Done
 SELECT * FROM tbOrder;          -- Done
 SELECT * FROM tbOrderItem;      -- Done
 
-
+*/
