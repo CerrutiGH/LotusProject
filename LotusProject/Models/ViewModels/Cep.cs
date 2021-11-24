@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 
-namespace ClassLibraryModels.ViewModels
+namespace LotusProject.Models.ViewModels
 {
     public class Cep
     {

@@ -5,8 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ClassLibraryConnection;
-using ClassLibraryModels.InputModels;
-using ClassLibraryModels.Models;
+using LotusProject.Models.InputModels;
+using LotusProject.Models;
 
 namespace ClassLibraryDatabaseActions.ActionsCustomer
 {

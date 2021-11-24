@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibraryModels.InputModels
+namespace LotusProject.Models.InputModels
 {
     public class InputProduct
     {

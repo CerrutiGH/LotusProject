@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace ClassLibraryModels.InputModels
+namespace LotusProject.Models.InputModels
 {
     public class InputLoginCustomer
     {
