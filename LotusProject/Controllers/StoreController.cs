@@ -13,7 +13,7 @@ namespace LotusProject.Controllers
         {
             return View();
         }
-
+         
         public ActionResult ViewProduct()
         {
             return View();
