@@ -56,6 +56,8 @@ PackName varchar(150) not null,
 PackDescription varchar(300) not null
 );
 
+
+
 CREATE TABLE IF NOT EXISTS tbReserve(
 ResCode int primary key auto_increment,
 ResValidity datetime not null default current_timestamp,

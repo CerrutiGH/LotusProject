@@ -1,5 +1,27 @@
 ﻿
 @{
+    LotusProject.Actions.ActionOrders AcOrders = new LotusProject.Actions.ActionOrders();
+    LotusProject.Actions.ActionReserve AcReserve = new LotusProject.Actions.ActionReserve();
+
+    //var Jan = AcOrders.MonthOrders(1);
+    //var Feb = AcOrders.MonthOrders(2);
+    //var Mar = AcOrders.MonthOrders(3);
+    //var Apr = AcOrders.MonthOrders(4);
+    //var May = AcOrders.MonthOrders(5);
+    //var Jun = AcOrders.MonthOrders(6);
+    //var Jul = AcOrders.MonthOrders(7);
+    //var Ago = AcOrders.MonthOrders(8);
+    //var Sep = AcOrders.MonthOrders(9);
+    //var Oct = AcOrders.MonthOrders(10);
+    var Nov = AcOrders.MonthOrders(11);
+    var Dec = AcOrders.MonthOrders(12);
+
+    IEnumerable<LotusProject.Models.ViewModels.ViewReserve> ReservesDash = (ViewBag.Reserve != null) ? ViewBag.Reserve : new LotusProject.Models.ViewModels.ViewReserve();
+    IEnumerable<LotusProject.Models.ViewModels.ViewEmployee> EmployeeDash = (ViewBag.ListEmployee != null) ? ViewBag.ListEmployee : new LotusProject.Models.ViewModels.ViewEmployee();
+    var OrdAmount = AcOrders.OrdersDashAmount();
+    var OrdValue = AcOrders.OrdersValueTotal();
+    var ResAmount = AcReserve.ReserveDashAmount();
+    LotusProject.Models.Employee EmpBag = (ViewBag.Employee != null) ? ViewBag.Employee : new LotusProject.Models.Employee();
     ViewBag.Title = "Dashboard";
     Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
 
@@ -30,49 +52,74 @@
 <div class="row">
     <div class="col-md-3">
         <div class="card card-top-page">
-            <div class="content">
-                <h3> @salutation Gabriel Cerruti</h3>
+                <div class="content">
+                    <h3> @salutation @EmpBag.name</h3>
+                </div>
 
-            </div>
         </div>
     </div>
+      
+
+    <div class="col-md-3">
+        <div class="card card-top-page">
+                <div class="align-items-center row">
+                    <div class="col">
+                        <a href="#"><h6>Pedidos</h6></a>
+                        <span>@OrdAmount</span>
+                    </div>
+                    <div class="col-auto">
+                        <i class="shopping bag icon" style="font-size: 25px; padding-top:10px"></i>
+                    </div>
+                </div>
+        </div>
+    </div>
+    
+
+    @if (EmpBag.role == "Administrator")
+    {
+
+
+        <div class="col-md-3">
+
+            <div class="card card-top-page">
+                    <div class="align-items-center row">
+                        <div class="col">
+                            <a href="#"><h6>Valor total</h6></a>
+                            <span>@OrdValue</span>
+                        </div>
+                        <div class="col-auto">
+                            <i class="dollar sign icon" style="font-size: 25px; padding-top:10px"></i>
+                        </div>
+                    </div>
+            </div>
+        </div>
+       
+    }
+    else
+    {
+        <div class="col-md-3">
+
+            <div class="card card-top-page">
+                <div class="align-items-center row">
+                    <div class="col">
+                        <h6>Valor total</h6>
+                        Sem acesso.
+                    </div>
+                    <div class="col-auto">
+                        <i class="dollar sign icon" style="font-size: 25px; padding-top:10px"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
 
     <div class="col-md-3">
         <div class="card card-top-page">
             <div class="align-items-center row">
                 <div class="col">
-                    <h6>Pedidos</h6>
-                    <span>147</span>
-                </div>
-                <div class="col-auto">
-                    <i class="shopping bag icon" style="font-size: 25px; padding-top:10px"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="col-md-3">
-
-        <div class="card card-top-page">
-            <div class="align-items-center row">
-                <div class="col">
-                    <h6>Valor total</h6>
-                    <span>21.371</span>
-                </div>
-                <div class="col-auto">
-                    <i class="dollar sign icon" style="font-size: 25px; padding-top:10px"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-3">
-        <div class="card card-top-page">
-            <div class="align-items-center row">
-                <div class="col">
-                    <h6>Reservas</h6>
-                    <span>15</span>
+                    <a href="#"><h6>Reservas</h6></a>
+                    <span>@ResAmount</span>
                 </div>
                 <div class="col-auto">
                     <i class="tags icon" style="font-size: 25px; padding-top: 10px"></i>
@@ -113,46 +160,18 @@
                         </tr>
                     </thead>
                     <tbody>
+                       @foreach(var item in EmployeeDash)
+                        {
                         <tr>
-                            <td style="color: white">1</td>
-                            <td style="color: white">Monic</td>
+                            <td style="color: white">#</td>
+                            <td style="color: white">@item.name</td>
                         </tr>
-                        <tr>
-                            <td style="color: white">2</td>
-                            <td style="color: white">Mark</td>
-                        </tr>
-                        <tr>
-                            <td style="color: white">3</td>
-                            <td style="color: white">Fernanda</td>
-                        </tr>
-                        <tr>
-                            <td style="color: white">4</td>
-                            <td style="color: white">David</td>
-                        </tr>
-                        <tr>
-                            <td style="color: white">5</td>
-                            <td style="color: white">Gabriel</td>
-                        </tr>
-                        <tr>
-                            <td style="color: white">6</td>
-                            <td style="color: white">Antony</td>
-                        </tr>
-                        <tr>
-                            <td style="color: white">7</td>
-                            <td style="color: white">Yasmin</td>
-                        </tr>
-                        <tr>
-                            <td style="color: white">8</td>
-                            <td style="color: white">Bob</td>
-                        </tr>
-                        
-                        
-
+                        }
                     </tbody>
                 </table>
             </div>
-            <div class="card-footer text-center" style="color: white">
-                Ver todos
+            <div class="card-footer text-center" >
+                <a href="#" style="color: white">Ver todos</a>
             </div>
         </div>
     </div>
@@ -172,20 +191,31 @@
         <table class="table striped" style="color: white">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
                     <th scope="col">Cliente</th>
                     <th scope="col">Data</th>
                     <th scope="col">Status</th>
                 </tr>
             </thead>
             <tbody>
+                @foreach (var item in ReservesDash)
+                {
                 <tr>
-                    <td style="color: white">1</td>
-                    <td style="color: white">Monic</td>
-                    <td style="color: white">25/12/2021</td>
-                    <td style="color: white"><span class="text-danger">●</span> Cancelado</td>
+                    <td style="color: white">@item.custname</td>
+                    <td style="color: white">@item.resvalidity</td>
+                    @if (item.statusreserve == "F")
+                    {
+                    <td style="color: white"><span class="text-success">●</span> Atendido</td>
+                    }
+                    else
+                    {
+                        <td style="color: white"><span class="text-danger">●</span> Cancelado</td>
+                    }
+
                 </tr>
-                <tr>
+                }
+
+
+                @*<tr>
                     <td style="color: white">2</td>
                     <td style="color: white">Mark</td>
                     <td style="color: white">23/12/2021</td>
@@ -208,14 +238,14 @@
                     <td style="color: white">Gabriel</td>
                     <td style="color: white">08/11/2021</td>
                     <td style="color: white"><span class="text-success">●</span> Atendido</td>
-                </tr>
+                </tr>*@
 
             </tbody>
         </table>
 
     </div>
     <div class="card-footer text-center">
-        Ver todas
+        <a href="#" style="color: white">Ver todos</a>
     </div>
 </div>
 
@@ -237,7 +267,7 @@
             labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
             datasets: [{
                 label: "Vendas - @DateTime.Now.Year",
-                data: [70, 130, 104, 107, 190, 106, 160, 140, 126, 170, 320, 222, 324],
+                data: [223, 123, 234, 133, 200, 150, 190, 180, 300, 222, @Nov, @Dec)],
                 borderWidth: 1,
                 borderColor: '#b492ff',
                 fontColor: '#b492ff'

@@ -11,10 +11,10 @@
 .card-top-page {
     background-color: var(--nav-color);
     padding: 40px;
-    max-height: 200px;
+    max-height: 140px;
     margin-bottom: 5px;
     margin-top: 5px;
-    min-height: 130px;
+    min-height: 140px;
     border-radius: 9px;
     color: white;
     font-family: 'Red Hat Mono', monospace !important;
@@ -35,7 +35,7 @@
     .card-top-page span {
         color: white;
         font-family: 'Red Hat Mono', monospace !important;
-        font-size:30px;
+        font-size:20px;
     }
 
 
@@ -50,6 +50,7 @@
 .card-employee {
     background-color: var(--nav-color);
     min-height: 430px;
+    margin-top: 5px;
     border-radius: 9px;
     max-height: 430px;
 }

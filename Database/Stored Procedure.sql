@@ -1,3 +1,19 @@
+Delimiter $$
+CREATE PROCEDURE spUpdateCustomer(varCustCPF varchar(14), varCustName varchar(150), varCustDtNasc datetime,
+varCustGender char(1), varCustPassword varchar(18), varCustNumberAddress integer, varCEP varchar(10))
+BEGIN
+
+IF NOT EXISTS (SELECT CEP FROM tbCep WHERE CEP = varCEP) THEN
+            INSERT INTO tbCep (CEP) VALUES (varCEP);
+END IF;
+
+IF EXISTS (SELECT CustCPF FROM tbCustomer WHERE CustCPF = varCustCPF) THEN
+				UPDATE tbCustomer SET CustName = varCustName, CustDtNasc = varCustDtNasc, CustGender = varCustGender, CustPassword = varCustPassword, CustNumberAddress = varCustNumberAddress, CEPAddress = (SELECT CEP FROM tbCep WHERE CEP = varCEP) WHERE CustCPF = varCustCPF;
+END IF;
+
+END; 
+$$ DELIMITER ;
+
 
 DROP PROCEDURE IF EXISTS spInsertCustomer;
 Delimiter $$
@@ -20,13 +36,23 @@ $$ DELIMITER ;
 
 
 
-
+DROP PROCEDURE IF EXISTS spLoginUser;
 DELIMITER $$
 CREATE PROCEDURE spLoginUser(varEmailUser varchar(150), varPasswordUser varchar(18))
 BEGIN
-SELECT * FROM tbCustomer WHERE CustEmail = varEmailUser AND CustPassword = varPasswordUser AND IsDeleted = 'No';
+SELECT * FROM tbCustomer WHERE CustEmail = varEmailUser AND CustPassword = varPasswordUser AND IsDeleted = 'N';
 END
 $$ DELIMITER ;
+
+DROP PROCEDURE IF EXISTS spLoginEmployee;
+DELIMITER $$
+CREATE PROCEDURE spLoginEmployee(varLoginEmployee varchar(150), varPasswordEmployee varchar(18))
+BEGIN
+SELECT * FROM tbemployee WHERE EmpLogin = varLoginEmployee AND EmpPassword = varPasswordEmployee AND IsDeleted = 'N';
+END
+$$ DELIMITER ;
+
+CALL spLoginEmployee("Cerriti", "123321");
 
 
 DELIMITER $$
@@ -36,6 +62,14 @@ SELECT CustEmail FROM tbCustomer WHERE CustEmail = varEmailUser;
 END
 $$ DELIMITER ;
 
+DROP PROCEDURE IF EXISTS spSelectEmployeeData;
+DELIMITER $$
+CREATE PROCEDURE spSelectEmployeeData(varLogin varchar(50))
+BEGIN
+SELECT * FROM vwDataEmployee WHERE EmpLogin = varLogin;
+END
+$$ DELIMITER ;
+CALL spSelectEmployeeData("Cerriti");
 
 
 
@@ -195,6 +229,18 @@ UPDATE tbpayment SET StatusPayment = 'F' WHERE CustCPF = varCustCPF AND StatusPa
 END; 
 $$ DELIMITER ;
 
+DELIMITER $$
+CREATE PROCEDURE spChangeStatusReserve (varResCode int, varStatusReserve char(1))
+BEGIN
+
+IF EXISTS (SELECT ResCode FROM tbReserve WHERE ResCode = varResCode AND StatusReserve = 'F') THEN
+UPDATE tbReserve SET StatusReserve = varStatusReserve WHERE ResCode = varResCode;
+END IF;
+END; 
+$$ DELIMITER ;
+
+CALL spChangeStatusReserve (5, 'A');
+
 
 /*CALL PROCEDURES*/
 
@@ -209,6 +255,8 @@ CALL spLoginUser("bielhcsou22@gmail.com", "123322");
 
 /* Insert Employee */
 CALL spInsertEmployee("44697971801", "Gabriel Cerruti", "Cerriti", '2003-02-25', "m", "1197546558", "bielhousa@gmail.com", "123321", 12, "02522-100", "Gerente");
+CALL spInsertEmployee("44697971822", "Fernanda Rocha", "Cerrit", '2003-02-25', "m", "1197546522", "bielhou22@gmail.com", "123321", 12, "02522-100", "Administrator");
+CALL spInsertEmployee("44697971823", "Gabriel Cerruti", "Cerri", '2003-02-25', "m", "1197546523", "bielhou32@gmail.com", "123321", 12, "02522-100", "Administrator");
 
 /* Insert Products */
 CALL spInsertProduct (123654656, "Celular", 50.63, "Eletronico");
@@ -217,7 +265,7 @@ CALL spInsertProduct (123609999, "Mickey", 70.00, "Brinquedo");
 CALL spInsertProduct (123607999, "Mickey mouse", 70.00, "Pelucia");
 CALL spInsertProduct (555555555, "Mickey mouse", 70.00, "Pelucia");
 
-/* Add product in cart */
+
 CALL spInsertOrderItem (123609999, 4, 45665465444);
 CALL spInsertOrderItem (123600006, 4, 45665465444);
 CALL spInsertOrderItem (123607999, 3, 45665465444);
@@ -234,7 +282,7 @@ CALL spReserve(4, 44687871801, 'Sonho Feliz');
 CALL spReserve(3, 45665465444, 'Sonho Feliz');
 
 /*Finish Reserve and close payment*/
-CALL spFinishReserve ("Débito", "44687871801");
+CALL spFinishReserve ("Débito", "45665465444");
 
 CALL spDeleteProductOrderItem(44687871822, 555555555);
 

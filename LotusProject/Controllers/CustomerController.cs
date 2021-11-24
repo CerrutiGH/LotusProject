@@ -3,8 +3,8 @@ using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
 using ClassLibraryDatabaseActions.ActionsCustomer;
-using ClassLibraryModels.InputModels;
-using ClassLibraryModels.ViewModels;
+using LotusProject.Models.InputModels;
+using LotusProject.Models.ViewModels;
 
 
 namespace LotusProject.Controllers
@@ -56,13 +56,13 @@ namespace LotusProject.Controllers
             if (!ModelState.IsValid) {
                 return View(login);
             }
-            ViewBag.CustumerAttributes = custumer.SignIn(login.email, login.password);
+            var cust = custumer.SignIn(login.email, login.password);
 
-            if (ViewBag.CustumerAttributes.email != null && ViewBag.CustumerAttributes.password != null)
+            if (cust.email != null && cust.password != null)
             {
-                FormsAuthentication.Encrypt(new FormsAuthenticationTicket(1, ViewBag.CustumerAttributes.email, DateTime.Now, DateTime.Now.AddHours(12), true, ViewBag.CustumerAttributes.password));
-                Session["emailCust"] = ViewBag.CustumerAttributes.email;
-                Session["nameCust"] = ViewBag.CustumerAttributes.name;
+                FormsAuthentication.Encrypt(new FormsAuthenticationTicket(1, cust.email, DateTime.Now, DateTime.Now.AddHours(12), true, cust.password));
+                Session["emailCust"] = cust.email.ToString();
+                Session["nameCust"] = cust.name.ToString();
 
 
                 return RedirectToAction("Home", "Home");

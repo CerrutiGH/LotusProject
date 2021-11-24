@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibraryModels.ViewModels
+namespace LotusProject.Models.ViewModels
 {
     public class ViewCustomer
     {
