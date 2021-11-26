@@ -5,67 +5,111 @@
 }
 
 
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="~/static/Images/Lotus SPA.png" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="~/static/Images/Lotus SPA.png" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-            <img src="~/static/Images/Lotus SPA.png" class="d-block w-100" alt="...">
-        </div>
+<div class="card text-center" style="background-color: #233240;">
+    <div class="card-header">
+        Featured
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
+    <div class="card-body">
+        <h1 class="card-title" style="color: white">Gerenciamento de Funcionários</h1>
+        <p class="card-text" style="color: white">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    <div class="card-footer text-muted">
+        @DateTime.Now.Day/@DateTime.Now.Month/@DateTime.Now.Day
+    </div>
 </div>
 
 <div class="row" style="padding-top: 10px; padding-left: 10px; padding-right: 10px">
-    <div class="card card-reserve" style="top: 10px; background-color: #233240; ">
-        <div class="card-header text-center" style="color: white">
-            Funcionários
-        </div>
-        <div class="card-body">
-            <table class="table striped" style="color: white">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td style="text-align: end"><button class="positive ui button" style="height: 30px; font-size: 12px;">Editar</button> &nbsp; <button class="negative ui button" style="height: 30px; font-size: 12px;">Delete</button></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>afat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>atwitter</td>
-                    </tr>
-                </tbody>
-            </table>
+    
+      
+    <div class="row">
+        <div class="col-md-3" style="padding-top: 10px; ">
+            <div class="ui card" style="background-color: #233240; border-color: #2A435B;">
+                <div class="image">
+                    <img src="~/static/Images/Janice Pereira.png">
+                </div>
+                <div class="content">
+                    <a class="header" style="color: white">Kristy</a>
+                    <div class="meta">
+                        <span class="date" style="color: white">LoginUser</span>
+                    </div>
+                    <div class="description" style="color: white">
+                        Cargo Funcionario
+                    </div>
+                </div>
+                <div class="extra content">
+                    <button class="ui teal button" style="height: 30px; font-size: 12px;">Detalhes</button>
 
+                </div>
+            </div>
         </div>
-        <div class="card-footer text-center">
-            <a href="#" style="color: white">Ver todos</a>
+
+        <div class="col-md-3" style="padding-top: 10px">
+            <div class="ui card" style="background-color: #233240; ">
+                <div class="image">
+                    <img src="~/static/Images/Janice Pereira.png">
+                </div>
+                <div class="content">
+                    <a class="header" style="color: white">Kristy</a>
+                    <div class="meta">
+                        <span class="date" style="color: white">LoginUser</span>
+                    </div>
+                    <div class="description" style="color: white">
+                        Cargo Funcionario
+                    </div>
+                </div>
+                <div class="extra content">
+                    <button class="ui teal button" style="height: 30px; font-size: 12px;">Detalhes</button>
+
+                </div>
+            </div>
         </div>
+
+        <div class="col-md-3" style="padding-top: 10px">
+            <div class="ui card" style="background-color: #233240; ">
+                <div class="image">
+                    <img src="~/static/Images/Janice Pereira.png">
+                </div>
+                <div class="content">
+                    <a class="header" style="color: white">Kristy</a>
+                    <div class="meta">
+                        <span class="date" style="color: white">LoginUser</span>
+                    </div>
+                    <div class="description" style="color: white">
+                        Cargo Funcionario
+                    </div>
+                </div>
+                <div class="extra content">
+                    <button class="ui teal button" style="height: 30px; font-size: 12px;">Detalhes</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3" style="padding-top: 10px">
+            <div class="ui card" style="background-color: #233240; border: none">
+                <div class="image">
+                    <img src="~/static/Images/Janice Pereira.png">
+                </div>
+                <div class="content">
+                    <a class="header" style="color: white">Kristy</a>
+                    <div class="meta">
+                        <span class="date" style="color: white">LoginUser</span>
+                    </div>
+                    <div class="description" style="color: white">
+                        Cargo Funcionario
+                    </div>
+                </div>
+                <div class="extra content">
+                    <button class="ui teal button" style="height: 30px; font-size: 12px;">Detalhes</button>
+
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
+
 </div>
+       
