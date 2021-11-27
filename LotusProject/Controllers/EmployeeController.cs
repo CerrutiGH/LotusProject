@@ -67,7 +67,14 @@ namespace LotusProject.Controllers
 
         public ActionResult EmployeeCenter()
         {
+            if (Session["loginEmp"] == null)
+            {
+                return RedirectToAction("LogInEmployee", "Employee");
+            }
+            else
+            {
             return View();
+            }
         }
 
     }
