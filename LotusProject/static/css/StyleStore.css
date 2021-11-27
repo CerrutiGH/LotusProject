@@ -27,3 +27,15 @@ div.image img {
 star.outline.icon {
     font-size: 10px !important
 }
+
+ui.icon.header {
+    float: left;
+    display: inline-block;
+    display: block;
+}
+
+    ui.icon.header i {
+        font-size: 10px !important
+    }
+
+
