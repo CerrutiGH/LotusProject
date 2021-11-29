@@ -8,13 +8,13 @@ namespace LotusProject.Controllers
 {
     public class StoreController : Controller
     {
-        // GET: Store
-        public ActionResult Cart()
+        // GET: Store        
+        public ActionResult MainStore()
         {
             return View();
         }
-        
-        public ActionResult MainStore()
+         
+        public ActionResult ViewProduct()
         {
             return View();
         }

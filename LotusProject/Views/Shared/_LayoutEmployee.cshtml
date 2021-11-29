@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    LotusProject.Models.Employee EmpBag = (ViewBag.Employee != null) ? ViewBag.Employee : new LotusProject.Models.Employee();
+ }
+
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -34,7 +38,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="~/Employee/Dashboard">
                     <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                     <span class="title">Dashboard</span>
                 </a>
@@ -52,7 +56,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="~/Employee/EmployeeCenter">
                     <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
                     <span class="title">Funcionários</span>
                 </a>
@@ -64,7 +68,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="@Url.Action("Logout", "Employee")">
                     <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
                     <span class="title">Sign Out</span>
                 </a>
@@ -84,7 +88,7 @@
             </div>
 
             <div class="user-account">
-                <p>Gabriel Cerruti</p>
+                <p>@Session["loginEmp"]</p>
             </div>
         </div>
         <div class="content-main">

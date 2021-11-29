@@ -11,7 +11,7 @@ namespace ClassLibraryConnection
     public class Connection
     {
 
-        MySqlConnection connect = new MySqlConnection(ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString);
+        MySqlConnection connect = new MySqlConnection(ConfigurationManager.ConnectionStrings["MySqlAzure"].ConnectionString);
 
         public static string msg;
         public MySqlConnection ConnectBD()

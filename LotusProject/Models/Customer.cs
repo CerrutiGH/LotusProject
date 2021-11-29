@@ -5,12 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibraryModels.Models
+namespace LotusProject.Models
 {
     public class Customer
     {
-       
-
         [Required(ErrorMessage = "O campo Nome completo é obrigatório")]
         [Display(Name = "Nome completo")]
         public string name { get; set; }

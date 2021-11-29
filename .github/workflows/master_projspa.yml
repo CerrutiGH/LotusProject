@@ -1,12 +1,12 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP app to Azure Web App - spalotus
+name: Build and deploy ASP app to Azure Web App - projspa
 
 on:
   push:
     branches:
-      - Production
+      - master
   workflow_dispatch:
 
 jobs:
@@ -51,7 +51,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'spalotus'
+          app-name: 'projspa'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_183ACAF1BC0B4C5C9BFC925BC42FF847 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_737D503BAF2E4D98AE5EC182E7F298D6 }}
           package: .
