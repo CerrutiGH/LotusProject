@@ -15,20 +15,43 @@ namespace LotusProject.Actions
 
         public int OrdersDashAmount()
         {
-            Cmd = new MySqlCommand("select COUNT(*) From vwAllOrders;", conn.ConnectBD());
-            int CountOrder = Convert.ToInt32(Cmd.ExecuteScalar());
-
-            conn.DisconnectBD();
-            return Convert.ToInt32(CountOrder);
+            Cmd = new MySqlCommand("select COUNT(*) From vwAllOrders WHERE MONTH(OrdDate) = month(now());", conn.ConnectBD());
+            try
+            {
+                int CountOrder = Convert.ToInt32(Cmd.ExecuteScalar());
+                return Convert.ToInt32(CountOrder);
+            }
+            catch
+            {
+                return 0;
+            }
+            finally
+            {
+                conn.DisconnectBD();
+            }
         }
 
         public decimal OrdersValueTotal()
         {
-            Cmd = new MySqlCommand("select SUM(OrdTotalPrice) FROM vwAllOrders WHERE MONTH(OrdDate) = month(now());", conn.ConnectBD());
-            decimal CountOrder = Convert.ToDecimal(Cmd.ExecuteScalar());
-
-            conn.DisconnectBD();
-            return Convert.ToDecimal(CountOrder);
+            Cmd = new MySqlCommand("select SUM(Ord TotalPrice) FROM vwAllOrders WHERE MONTH(OrdDate) = month(now());", conn.ConnectBD());
+            try
+            {
+                decimal CountOrder = Convert.ToDecimal(Cmd.ExecuteScalar());
+                return Convert.ToDecimal(CountOrder);
+            }
+            catch
+            {
+                
+                return 0;
+            }
+            finally
+            {
+                conn.DisconnectBD();
+            }
+           
+          
+            
+           
         }
 
         public int MonthOrders(int month)

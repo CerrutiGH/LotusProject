@@ -1,5 +1,7 @@
 ﻿
 @{
+
+    IEnumerable<LotusProject.Models.ViewModels.ViewPackages> Package = (ViewBag.Pack != null) ? ViewBag.Pack : new LotusProject.Models.ViewModels.ViewPackages();
     ViewBag.Title = "Reservation";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -36,236 +38,38 @@
 
     <div class="row">
 
-        <div class="col-md-3">
+        @foreach (var item in Package)
+        {
+            <div class="col-md-3">
 
-            <div class="ui cards ">
-                <div class="card main-cards">
-                    <div class="image">
-                        <img src="~/static/Images/ImageKnowUs.png">
-                    </div>
-                    <div class="content">
-                        <div class="header">Nome do pacote</div>
-                        <div class="meta">
-                            <a>Duração do pacote</a>
+                <div class="ui cards ">
+                    <div class="card main-cards">
+                        <div class="image">
+                            <img src="~/static/Images/ImageKnowUs.png">
                         </div>
-                        <div class="description">
-                            Esta é a descrição do pacote
+                        <div class="content">
+                            <div class="header">@item.Package</div>
+                            <div class="meta">
+                                <a>Duração do pacote</a>
+                            </div>
+                            <div class="description">
+                                @item.Description
+                            </div>
                         </div>
-                    </div>
-                    <div class="extra content">
-                        <span class="right floated price">
-                            R$100,00
-                        </span>
-                        <button class="ui inverted violet button">Comprar</button>
+                        <div class="extra content">
+                            <span class="right floated price">
+                                R$@item.Price
+                            </span>
+                            @Html.ActionLink("Comprar", "Payment", "Payment", new { id = item.PackCode }, new { @class = "ui inverted violet button" })
+                        </div>
                     </div>
                 </div>
+
             </div>
-
-        </div>
-
-        <div class="col-md-3">
-
-            <div class="ui cards ">
-                <div class="card main-cards">
-                    <div class="image">
-                        <img src="~/static/Images/ImageKnowUs.png">
-                    </div>
-                    <div class="content">
-                        <div class="header">Nome do pacote</div>
-                        <div class="meta">
-                            <a>Duração do pacote</a>
-                        </div>
-                        <div class="description">
-                            Esta é a descrição do pacote
-                        </div>
-                    </div>
-                    <div class="extra content">
-                        <span class="right floated price">
-                            R$100,00
-                        </span>
-                        <button class="ui inverted violet button">Comprar</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="col-md-3">
-
-            <div class="ui cards ">
-                <div class="card main-cards">
-                    <div class="image">
-                        <img src="~/static/Images/ImageKnowUs.png">
-                    </div>
-                    <div class="content">
-                        <div class="header">Nome do pacote</div>
-                        <div class="meta">
-                            <a>Duração do pacote</a>
-                        </div>
-                        <div class="description">
-                            Esta é a descrição do pacote
-                        </div>
-                    </div>
-                    <div class="extra content">
-                        <span class="right floated price">
-                            R$100,00
-                        </span>
-                        <button class="ui inverted violet button">Comprar</button>
-                    </div>
-                </div>
-            </div>
-
-
-
-        </div>
-
-        <div class="col-md-3">
-
-            <div class="ui cards ">
-                <div class="card main-cards">
-                    <div class="image">
-                        <img src="~/static/Images/ImageKnowUs.png">
-                    </div>
-                    <div class="content">
-                        <div class="header">Nome do pacote</div>
-                        <div class="meta">
-                            <a>Duração do pacote</a>
-                        </div>
-                        <div class="description">
-                            Esta é a descrição do pacote
-                        </div>
-                    </div>
-                    <div class="extra content">
-                        <span class="right floated price">
-                            R$100,00
-                        </span>
-                        <button class="ui inverted violet button">Comprar</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-        <hr />
-
-
-
-
-        <div class="col-md-3">
-
-            <div class="ui cards ">
-                <div class="card main-cards">
-                    <div class="image">
-                        <img src="~/static/Images/ImageKnowUs.png">
-                    </div>
-                    <div class="content">
-                        <div class="header">Nome do pacote</div>
-                        <div class="meta">
-                            <a>Duração do pacote</a>
-                        </div>
-                        <div class="description">
-                            Esta é a descrição do pacote
-                        </div>
-                    </div>
-                    <div class="extra content">
-                        <span class="right floated price">
-                            R$100,00
-                        </span>
-                        <button class="ui inverted violet button">Comprar</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="col-md-3">
-
-            <div class="ui cards ">
-                <div class="card main-cards">
-                    <div class="image">
-                        <img src="~/static/Images/ImageKnowUs.png">
-                    </div>
-                    <div class="content">
-                        <div class="header">Nome do pacote</div>
-                        <div class="meta">
-                            <a>Duração do pacote</a>
-                        </div>
-                        <div class="description">
-                            Esta é a descrição do pacote
-                        </div>
-                    </div>
-                    <div class="extra content">
-                        <span class="right floated price">
-                            R$100,00
-                        </span>
-                        <button class="ui inverted violet button">Comprar</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="col-md-3">
-
-            <div class="ui cards ">
-                <div class="card main-cards">
-                    <div class="image">
-                        <img src="~/static/Images/ImageKnowUs.png">
-                    </div>
-                    <div class="content">
-                        <div class="header">Nome do pacote</div>
-                        <div class="meta">
-                            <a>Duração do pacote</a>
-                        </div>
-                        <div class="description">
-                            Esta é a descrição do pacote
-                        </div>
-                    </div>
-                    <div class="extra content">
-                        <span class="right floated price">
-                            R$100,00
-                        </span>
-                        <button class="ui inverted violet button">Comprar</button>
-                    </div>
-                </div>
-            </div>
-
-
-
-        </div>
-
-        <div class="col-md-3">
-
-            <div class="ui cards ">
-                <div class="card main-cards">
-                    <div class="image">
-                        <img src="~/static/Images/ImageKnowUs.png">
-                    </div>
-                    <div class="content">
-                        <div class="header">Nome do pacote</div>
-                        <div class="meta">
-                            <a>Duração do pacote</a>
-                        </div>
-                        <div class="description">
-                            Esta é a descrição do pacote
-                        </div>
-                    </div>
-                    <div class="extra content">
-                        <span class="right floated price">
-                            R$100,00
-                        </span>
-                        <button class="ui inverted violet button">Comprar</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+            <hr />
+        }
 
     </div>
-
-
-
 
 
 </div>

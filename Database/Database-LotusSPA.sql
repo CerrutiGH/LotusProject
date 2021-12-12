@@ -3,11 +3,9 @@ CREATE DATABASE IF NOT EXISTS dbLotus;
 
 USE dbLotus;
 
-
 CREATE TABLE IF NOT EXISTS tbCep(
 CEP varchar(10) primary key not null
 );
-
 
 CREATE TABLE IF NOT EXISTS tbCustomer(
 CustCPF varchar(14) primary key not null,
@@ -42,12 +40,6 @@ IsDeleted char(1) not null default 'N', -- N = No | Y = Yes
 CEPAddress varchar(10) not null references tbAddress(CEP) on update cascade -- Verificado primeiro
 );
 
-
-
-
-
-
-
 CREATE TABLE IF NOT EXISTS tbPackage(
 PackCode int primary key auto_increment,
 PackPrice decimal(8,2) not null,
@@ -55,8 +47,6 @@ StatusPack char(1) not null default 'A', -- A = Active | D = Disable
 PackName varchar(150) not null,
 PackDescription varchar(300) not null
 );
-
-
 
 CREATE TABLE IF NOT EXISTS tbReserve(
 ResCode int primary key auto_increment,
@@ -116,7 +106,6 @@ OpPayCode int primary key auto_increment,
 PayOption varchar(20) not null unique
 );
 
-
 CREATE TABLE IF NOT EXISTS tbPayment(
 PayCode int primary key auto_increment,
 PayDate datetime not null default current_timestamp,
@@ -127,7 +116,7 @@ OpPayCode varchar(20) not null references tbOptionPay(OpPayCode) on update casca
 CustCPF varchar(14) not null references tbCustomer(CustCPF) on update cascade
 );
 
-  /*
+/*
 SELECT * FROM tbCep;            -- Used/Done     
 SELECT * FROM tbRole;           -- Used/Done 
 SELECT * FROM tbCustomer;       -- Done

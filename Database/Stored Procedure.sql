@@ -201,15 +201,15 @@ $$ DELIMITER ;
 
 
 
-
+DROP PROCEDURE IF EXISTS spReserve;
 DELIMITER $$
-CREATE PROCEDURE spReserve (varResAmount int, varCustCPF varchar(14), varPackName varchar(150))
+CREATE PROCEDURE spReserve (varResAmount int, varCustCPF varchar(14), varPackCode int)
 BEGIN
 IF NOT EXISTS (SELECT ResCode FROM tbreserve WHERE CustCPF = varCustCPF AND StatusReserve = 'U') THEN
 INSERT INTO tbreserve (ResPrice,ResAmount, CustCPF, PackCode)
-VALUES ((SELECT PackPrice FROM tbPackage WHERE PackName = varPackName AND StatusPack = 'A') * varResAmount,varResAmount, varCustCPF, (SELECT PackCode FROM tbPackage WHERE PackName = varPackName AND StatusPack = 'A'));
+VALUES ((SELECT PackPrice FROM tbPackage WHERE PackCode = varPackCode AND StatusPack = 'A') * varResAmount,varResAmount, varCustCPF, varPackCode);
 ELSE 
-UPDATE tbreserve SET ResPrice = (SELECT PackPrice FROM tbPackage WHERE PackName = varPackName AND StatusPack = 'A'), ResAmount = varResAmount, PackCode = (SELECT PackCode FROM tbPackage WHERE PackName = varPackName AND StatusPack = 'A') WHERE CustCPF = varCustCPF AND StatusReserve = 'U';
+UPDATE tbreserve SET ResPrice = (SELECT PackPrice FROM tbPackage WHERE PackCode = varPackCode AND StatusPack = 'A'), ResAmount = varResAmount, PackCode = (SELECT PackCode FROM tbPackage WHERE PackName = varPackName AND StatusPack = 'A') WHERE CustCPF = varCustCPF AND StatusReserve = 'U';
 END IF;
 END; 
 $$ DELIMITER ;
@@ -248,6 +248,47 @@ CALL spChangeStatusReserve (2, 'C');
 
 
 /* Insert Customer */
+
+
+CALL spLoginUser("bielhcsou22@gmail.com", "123322");
+
+/* Insert Employee */
+CALL spInsertEmployee("44697971801", "Gabriel Cerruti", "Cerriti", '2003-02-25', "m", "1197546558", "bielhousa@gmail.com", "123321", 12, "02522-100", "Gerente");
+CALL spInsertEmployee("44697971822", "Fernanda Rocha", "Cerrit", '2003-02-25', "m", "1197546522", "bielhou22@gmail.com", "123321", 12, "02522-100", "Administrator");
+CALL spInsertEmployee("44697971823", "Gabriel Cerruti", "Cerri", '2003-02-25', "m", "1197546523", "bielhou32@gmail.com", "123321", 12, "02522-100", "Administrator");
+
+/* Insert Products */
+CALL spInsertProduct (123654656, "Celular", 50.63, "Eletronico");
+CALL spInsertProduct (123600006, "Bob esponja", 70.00, "Brinquedo");
+CALL spInsertProduct (123609999, "Mickey", 70.00, "Brinquedo");
+CALL spInsertProduct (123607999, "Mickey mouse", 70.00, "Pelucia");
+CALL spInsertProduct (555555555, "Mickey mouse", 70.00, "Pelucia");
+
+
+CALL spInsertOrderItem (123609999, 4, 45665465444);
+CALL spInsertOrderItem (123600006, 4, 45665465444);
+CALL spInsertOrderItem (123607999, 3, 45665465444);
+CALL spInsertOrderItem (555555555, 3, 45665465444);
+
+/* Finish Order and close payment */
+CALL spFinishOrder ("Crédito", 45665465444);
+
+/* Insert Package*/
+CALL spInsertPackage(50.67, "Sonho Feliz", "Esta é a descrição :)");
+
+/* Make reserve */
+CALL spReserve(4, 44687871801, 1); /*quantidade, cpf, codigo pack*/
+CALL spReserve(3, 45665465444, 1);
+
+/*Finish Reserve and close payment*/
+CALL spFinishReserve ("Débito", "44687871801");
+
+CALL spDeleteProductOrderItem(44687871822, 555555555);
+
+CALL spViewOrdersByCPF (44687871801);
+
+
+
 CALL spInsertCustomer(44687871801, "Gabriel Cerruti", '2003-02-25', "M", 11975466558, "bielhcsousa@gmail.com", "123321", 65, 05133160);
 CALL spInsertCustomer(44687871822, "Gabriel Cerruti", '2003-02-25', "M", 11975466522, "bielhcsou22@gmail.com", "123322", 70, 05133122);
 CALL spInsertCustomer(45665465444, "Fernanda Rocha", '2003-02-25', "F", 11975465522, "fefes@gmail.com", "123322", 70, 05133122);
@@ -415,42 +456,3 @@ CALL spInsertCustomer ("489.599.928-52","Elvis Johnson","1951-01-31","M","(11)94
   CALL spInsertCustomer ("111.429.988-24","Aretha Harvey","1955-03-26","M","(11)92350-6087","arethaharvey@aol.com","C47QF1B",6848,"76724-418");
   CALL spInsertCustomer ("527.145.738-24","Aidan Schneider","1971-11-18","M","(11)96968-8182","aidanschneider2024@aol.com","I11DY1W",3743,"81672-777");
   CALL spInsertCustomer ("894.186.404-29","Alexander Gage Cross","1982-11-25","F","(11)97855-7613","alexandergagecross@outlook.com","A12YG1X",3731,"81485-739");
-
-
-CALL spLoginUser("bielhcsou22@gmail.com", "123322");
-
-/* Insert Employee */
-CALL spInsertEmployee("44697971801", "Gabriel Cerruti", "Cerriti", '2003-02-25', "m", "1197546558", "bielhousa@gmail.com", "123321", 12, "02522-100", "Gerente");
-CALL spInsertEmployee("44697971822", "Fernanda Rocha", "Cerrit", '2003-02-25', "m", "1197546522", "bielhou22@gmail.com", "123321", 12, "02522-100", "Administrator");
-CALL spInsertEmployee("44697971823", "Gabriel Cerruti", "Cerri", '2003-02-25', "m", "1197546523", "bielhou32@gmail.com", "123321", 12, "02522-100", "Administrator");
-
-/* Insert Products */
-CALL spInsertProduct (123654656, "Celular", 50.63, "Eletronico");
-CALL spInsertProduct (123600006, "Bob esponja", 70.00, "Brinquedo");
-CALL spInsertProduct (123609999, "Mickey", 70.00, "Brinquedo");
-CALL spInsertProduct (123607999, "Mickey mouse", 70.00, "Pelucia");
-CALL spInsertProduct (555555555, "Mickey mouse", 70.00, "Pelucia");
-
-
-CALL spInsertOrderItem (123609999, 4, 45665465444);
-CALL spInsertOrderItem (123600006, 4, 45665465444);
-CALL spInsertOrderItem (123607999, 3, 45665465444);
-CALL spInsertOrderItem (555555555, 3, 45665465444);
-
-/* Finish Order and close payment */
-CALL spFinishOrder ("Crédito", 45665465444);
-
-/* Insert Package*/
-CALL spInsertPackage(50.67, "Sonho Feliz", "Esta é a descrição :)");
-
-/* Make reserve */
-CALL spReserve(4, 44687871801, 'Sonho Feliz');
-CALL spReserve(3, 45665465444, 'Sonho Feliz');
-
-/*Finish Reserve and close payment*/
-CALL spFinishReserve ("Débito", "45665465444");
-
-CALL spDeleteProductOrderItem(44687871822, 555555555);
-
-CALL spViewOrdersByCPF (44687871801);
-

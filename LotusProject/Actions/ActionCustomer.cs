@@ -47,6 +47,7 @@ namespace ClassLibraryDatabaseActions.ActionsCustomer
                 TempCust.email = Convert.ToString(dtr["CustEmail"]);
                 TempCust.password = Convert.ToString(dtr["CustPassword"]);
                 TempCust.name = Convert.ToString(dtr["CustName"]);
+                TempCust.cpf = Convert.ToString(dtr["CustCPF"]);
             }
             dtr.Close();
             conn.DisconnectBD();
