@@ -5,6 +5,7 @@ using LotusProject.Models.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using LotusProject.Models.InputModels;
 
 namespace LotusProject.Actions
 {
@@ -15,12 +16,23 @@ namespace LotusProject.Actions
 
         public int ReserveDashAmount()
         {
-            Cmd = new MySqlCommand("SELECT COUNT(*) FROM vwAllReserves;", conn.ConnectBD());
+            Cmd = new MySqlCommand("SELECT COUNT(*) FROM vwAllReserves WHERE MONTH(ResValidity) = MONTH(NOW());", conn.ConnectBD());
+            try
+            {
             int CountRes = Convert.ToInt32(Cmd.ExecuteScalar());
-
-            conn.DisconnectBD();
             return Convert.ToInt32(CountRes);
+            }
+            catch
+            {
+                return 0;
+            }
+            finally
+            {
+            conn.DisconnectBD();
+            }
+
         }
+
 
 
 
@@ -35,7 +47,7 @@ namespace LotusProject.Actions
                     custname = dt["CustName"].ToString(),
                     resamount = Convert.ToInt32(dt["ResAmount"]),
                     resprice = Convert.ToDecimal(dt["ResPrice"]),
-                    resvalidity = Convert.ToDateTime(dt["ResValidity"]),
+                    resvalidity = (dt["DATE_FORMAT(ResValidity,'%d/%m/%y')"]).ToString(),
                     statusreserve = Convert.ToString(dt["StatusReserve"])
                 };
                 ListRes.Add(reserve);
@@ -46,10 +58,56 @@ namespace LotusProject.Actions
 
         public List<ViewReserve> ReserveDashLimited()
         {
-            Cmd = new MySqlCommand("SELECT * FROM vwAllReserves LIMIT 5;", conn.ConnectBD());
+            Cmd = new MySqlCommand("SELECT CustCPF, CustName, ResAmount, ResPrice, DATE_FORMAT(ResValidity,'%d/%m/%y'), StatusReserve, ResCode FROM vwAllReserves LIMIT 5;", conn.ConnectBD());
             var ListRes = Cmd.ExecuteReader();
             
             return ListReserves(ListRes);
         }
+
+
+
+        public List<ViewPackages> ListPackages(MySqlDataReader dt)
+        {
+            var ListPac = new List<ViewPackages>();
+            while (dt.Read())
+            {
+                var pack = new ViewPackages()
+                {
+                    PackCode = Convert.ToInt32(dt["PackCode"]),
+                    Package = dt["PackName"].ToString(),
+                    Description = dt["PackDescription"].ToString(),
+                    Price = Convert.ToDecimal(dt["PackPrice"])
+                };
+                ListPac.Add(pack);
+            }
+            dt.Close();
+            return ListPac;
+        }
+
+        public List<ViewPackages> PackageList()
+        {
+            Cmd = new MySqlCommand("SELECT * FROM tbPackage;", conn.ConnectBD());
+            var ListPac = Cmd.ExecuteReader();
+
+            return ListPackages(ListPac);
+        }
+
+        public void InsertReserve(int codePack, string cpfCustomer)
+        {
+            Cmd = new MySqlCommand($"CALL spReserve(1, '{cpfCustomer}', {codePack});", conn.ConnectBD());
+
+            Cmd.ExecuteNonQuery();
+            conn.DisconnectBD();
+        }
+
+        public void FinishReserve(string cpfCustomer)
+        {
+            Cmd = new MySqlCommand($"CALL spFinishReserve('Crédito', '{cpfCustomer}')", conn.ConnectBD());
+
+            Cmd.ExecuteNonQuery();
+            conn.DisconnectBD();
+        }
+
+
     }
 }

@@ -63,6 +63,7 @@ namespace LotusProject.Controllers
                 FormsAuthentication.Encrypt(new FormsAuthenticationTicket(1, cust.email, DateTime.Now, DateTime.Now.AddHours(12), true, cust.password));
                 Session["emailCust"] = cust.email.ToString();
                 Session["nameCust"] = cust.name.ToString();
+                Session["cpgCust"] = cust.cpf.ToString();
 
 
                 return RedirectToAction("Home", "Home");
