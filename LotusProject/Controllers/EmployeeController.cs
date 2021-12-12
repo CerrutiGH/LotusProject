@@ -65,7 +65,7 @@ namespace LotusProject.Controllers
             return RedirectToAction("LogInEmployee", "Employee");
         }
 
-        public ActionResult EmployeeCenter()
+        public ActionResult Employees()
         {
             return View();
         }
