@@ -273,7 +273,6 @@
     <Content Include="Views\Customer\ViewLoginCustomer.cshtml" />
     <Content Include="Views\Customer\ViewRegisterCustomer.cshtml" />
     <Content Include="Views\Store\ViewProduct.cshtml" />
-    <Content Include="Views\Employee\EmployeeCenter.cshtml" />
     <Content Include="Views\Payment\Payment.cshtml" />
     <Content Include="Views\Employee\Employees.cshtml" />
   </ItemGroup>
