@@ -54,18 +54,12 @@
 
                 <div class="field">
                     <label style="color: white">Validade</label>
-                    <input placeholder="Validade do cartão" name="Validity" type="text">
+                    <input name="Validity" type="date">
                 </div>
             </div>
             <div style="bottom:0; position:absolute; width: 100%">
                 <div class="row" style="margin-left: 20px; margin-right: 20px; ">
-                    <div class="field col-6" style="text-align:start">
-                        <label style="font-size:20px; color: white">Total: </label>
-                    </div>
-
-                    <div class="field col-6" style="text-align:end">
-                        <label style="font-size:20px; color: white">R$1000,00</label>
-                    </div>
+                   
                     <a href="@Url.Action("FinishPaymentReserve", "Payment", new { id = Request.Url.Segments.Last() })" class = "ui inverted violet button"> Finalizar </a> 
                     
                    

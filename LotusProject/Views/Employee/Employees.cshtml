@@ -1,4 +1,4 @@
-﻿
+﻿@model List<LotusProject.Models.ViewModels.ViewEmployee>
 @{
     ViewBag.Title = "Employees";
     Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
@@ -12,7 +12,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="~/static/css/styleLayoutAdm.css">
 </head>
 
 <div class="card text-center" style="background-color: #233240;">
@@ -21,7 +21,7 @@
     </div>
     <div class="card-body">
         <h1 class="card-title" style="color: white">Gerenciamento de Funcionários</h1>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="~/Employee/SignUpEmp" class="btn btn-success">Adicionar funcionário</a>
     </div>
     <div class="card-footer text-muted">
         @DateTime.Now.Day/@DateTime.Now.Month/@DateTime.Now.Day
@@ -29,93 +29,31 @@
 </div>
 
 <div class="row" style="padding-top: 10px; padding-left: 10px; padding-right: 10px">
-
-
     <div class="row">
-        <div class="col-md-3" style="padding-top: 10px; ">
-            <div class="ui card" style="background-color: #233240; border-color: #2A435B;">
-                <div class="image">
-                    <img src="~/static/Images/Janice Pereira.png">
-                </div>
-                <div class="content">
-                    <a class="header" style="color: white">Kristy</a>
-                    <div class="meta">
-                        <span class="date" style="color: white">LoginUser</span>
-                    </div>
-                    <div class="description" style="color: white">
-                        Cargo Funcionario
-                    </div>
-                </div>
-                <div class="extra content">
-                    <button class="ui teal button" style="height: 30px; font-size: 12px;">Detalhes</button>
 
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3" style="padding-top: 10px; ">
+                <div class="ui card" style="background-color: #233240; border-color: #2A435B; height: 170px">
+
+                    <div class="content">
+                        <a class="header" style="color: white">@item.name</a>
+                        <div class="meta">
+                            <span class="date" style="color: white">@item.login</span>
+                        </div>
+                        <div class="description" style="color: white">
+                            @item.role
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        @Html.ActionLink("Detalhes", "DetailsEmp", "Employee", new { id = item.login }, new { @class = "ui teal button", @style="height: 30px; font-size: 12px;" })
+                        <button class="" ></button>
+
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="col-md-3" style="padding-top: 10px">
-            <div class="ui card" style="background-color: #233240; ">
-                <div class="image">
-                    <img src="~/static/Images/Janice Pereira.png">
-                </div>
-                <div class="content">
-                    <a class="header" style="color: white">Kristy</a>
-                    <div class="meta">
-                        <span class="date" style="color: white">LoginUser</span>
-                    </div>
-                    <div class="description" style="color: white">
-                        Cargo Funcionario
-                    </div>
-                </div>
-                <div class="extra content">
-                    <button class="ui teal button" style="height: 30px; font-size: 12px;">Detalhes</button>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3" style="padding-top: 10px">
-            <div class="ui card" style="background-color: #233240; ">
-                <div class="image">
-                    <img src="~/static/Images/Janice Pereira.png">
-                </div>
-                <div class="content">
-                    <a class="header" style="color: white">Kristy</a>
-                    <div class="meta">
-                        <span class="date" style="color: white">LoginUser</span>
-                    </div>
-                    <div class="description" style="color: white">
-                        Cargo Funcionario
-                    </div>
-                </div>
-                <div class="extra content">
-                    <button class="ui teal button" style="height: 30px; font-size: 12px;">Detalhes</button>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3" style="padding-top: 10px">
-            <div class="ui card" style="background-color: #233240; border: none">
-                <div class="image">
-                    <img src="~/static/Images/Janice Pereira.png">
-                </div>
-                <div class="content">
-                    <a class="header" style="color: white">Kristy</a>
-                    <div class="meta">
-                        <span class="date" style="color: white">LoginUser</span>
-                    </div>
-                    <div class="description" style="color: white">
-                        Cargo Funcionario
-                    </div>
-                </div>
-                <div class="extra content">
-                    <button class="ui teal button" style="height: 30px; font-size: 12px;">Detalhes</button>
-
-                </div>
-            </div>
-        </div>
-
+            
+        }
 
 
     </div>

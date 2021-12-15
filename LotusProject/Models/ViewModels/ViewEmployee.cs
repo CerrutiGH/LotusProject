@@ -14,14 +14,13 @@ namespace LotusProject.Models.ViewModels
         [Display(Name = "Login")]
         public string login { get; set; }
 
+
         [Display(Name = "Sexo")]
         public char sex { get; set; }
 
         [Display(Name = "CPF")]
         public string cpf { get; set; }
 
-        [Display(Name = "RG")]
-        public string rg { get; set; }
 
         [Display(Name = "Data de nascimento")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
@@ -30,8 +29,11 @@ namespace LotusProject.Models.ViewModels
         [Display(Name = "Telefone")]
         public string telephone { get; set; }
 
-        [Display(Name = "Endereço")]
-        public string address { get; set; }
+        [Display(Name = "Cep")]
+        public string cep { get; set; }
+
+        [Display(Name = "Número da residência")]
+        public int number { get; set; }
 
         [Display(Name = "Email")]
         public string email { get; set; }

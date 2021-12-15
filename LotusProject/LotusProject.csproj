@@ -186,6 +186,7 @@
     <Compile Include="Connection\Connection.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\ReservationController.cs" />
@@ -200,6 +201,8 @@
     <Compile Include="Models\InputModels\InputLoginEmployee.cs" />
     <Compile Include="Models\InputModels\InputProduct.cs" />
     <Compile Include="Models\InputModels\InputReservePayment.cs" />
+    <Compile Include="Models\InputModels\InputSignUpEmployee.cs" />
+    <Compile Include="Models\InputModels\InputUpdateEmployee.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\ViewModels\Cep.cs" />
     <Compile Include="Models\ViewModels\ViewPackages.cs" />
@@ -249,6 +252,7 @@
     <Content Include="static\Images\svg\spainicio.svg" />
     <Content Include="static\Images\svg\welcomedash.svg" />
     <Content Include="static\Images\womaninthebathtub.png" />
+    <Content Include="static\js\Animation.js" />
     <Content Include="static\js\cep.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -275,9 +279,12 @@
     <Content Include="Views\Store\ViewProduct.cshtml" />
     <Content Include="Views\Payment\Payment.cshtml" />
     <Content Include="Views\Employee\Employees.cshtml" />
+    <Content Include="Views\Employee\SignUpEmp.cshtml" />
+    <Content Include="Views\Employee\DetailsEmp.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Error\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
