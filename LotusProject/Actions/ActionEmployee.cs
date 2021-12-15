@@ -30,7 +30,7 @@ namespace LotusProject.Actions
                     birthday = Convert.ToDateTime(dt["EmpDtNasc"]),
                     telephone = dt["EmpTel"].ToString(),
                     email = dt["EmpEmail"].ToString(),
-                    address = dt["CEPAddress"].ToString(),
+                    cep = dt["CEPAddress"].ToString(),
                     role = dt["RoleName"].ToString()
                 };
                 ListEmp.Add(employee);
@@ -42,6 +42,14 @@ namespace LotusProject.Actions
         public List<ViewEmployee> EmployeeDashLimited()
         {
             Cmd = new MySqlCommand("SELECT * FROM vwDataEmployee LIMIT 8;", conn.ConnectBD());
+            var ListEmp = Cmd.ExecuteReader();
+
+            return ListEmployee(ListEmp);
+        }
+
+        public List<ViewEmployee> EmployeeAll()
+        {
+            Cmd = new MySqlCommand("SELECT * FROM vwDataEmployee;", conn.ConnectBD());
             var ListEmp = Cmd.ExecuteReader();
 
             return ListEmployee(ListEmp);
@@ -70,6 +78,27 @@ namespace LotusProject.Actions
 
         }
 
+
+        public void SignUp(Employee employee)
+        {
+            Cmd = new MySqlCommand("CALL spInsertEmployee(@cpf, @name, @Login, @Date, @gender, @tel, @email, @password, @number, @cep, @access);", conn.ConnectBD());
+            Cmd.Parameters.Add("@cpf", MySqlDbType.VarChar).Value = employee.cpf;
+            Cmd.Parameters.Add("@name", MySqlDbType.VarChar).Value = employee.name;
+            Cmd.Parameters.Add("@Login", MySqlDbType.VarChar).Value = employee.login;
+            Cmd.Parameters.Add("@Date", MySqlDbType.DateTime).Value = employee.birthday;
+            Cmd.Parameters.Add("@gender", MySqlDbType.VarChar).Value = employee.sex;
+            Cmd.Parameters.Add("@tel", MySqlDbType.VarChar).Value = employee.telephone;
+            Cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = employee.email;
+            Cmd.Parameters.Add("@password", MySqlDbType.VarChar).Value = employee.password;
+            Cmd.Parameters.Add("@number", MySqlDbType.Int32).Value = employee.number;
+            Cmd.Parameters.Add("@cep", MySqlDbType.VarChar).Value = employee.cep;
+            Cmd.Parameters.Add("@access", MySqlDbType.VarChar).Value = employee.role;
+
+            Cmd.ExecuteNonQuery();
+            conn.DisconnectBD();
+        }
+
+
         public Employee DataEmployee(string login)
         {
             Cmd = new MySqlCommand("CALL spSelectEmployeeData(@Login);", conn.ConnectBD());
@@ -91,5 +120,10 @@ namespace LotusProject.Actions
 
 
         }
+
+
+
+
+
     }
 }

@@ -1,0 +1,230 @@
+﻿@model LotusProject.Models.Employee
+
+
+
+
+@{
+    ViewBag.Title = "DetailsEmp";
+    Layout = "~/Views/Shared/_LayoutEmployee.cshtml";
+}
+
+
+@using (Html.BeginForm("SignUpEmp", "Employee", FormMethod.Post, new { @style = "width: 100%" }))
+{
+
+    @Html.AntiForgeryToken()
+    <div class="row" style=" padding-top: 2%">
+        <div class="col-md-6">
+
+            @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "form-label", @style = "margin-left:1%; color: white" })
+            @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control focus-input rounded-pill", @placeholder = "Insira o nome completo...", @style = "border-color: #2A435B" } })
+            @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="col-md-3">
+            @* Não atualiza *@
+            <label for="exampleFormControlInput1" class="form-label" style="margin-left:1%;color: white">Login</label>
+            <input type="tel" class="form-control rounded-pill" id="exampleFormControlInput1" value="@Html.DisplayFor(model => model.login)" disabled readonly>
+        </div>
+
+        <div class="col-md-3">
+            @* Não atualiza *@
+
+            <label for="exampleFormControlInput1" class="form-label" style="margin-left:1%;color: white">CPF</label>
+            <input type="tel" class="form-control rounded-pill" id="exampleFormControlInput1" value="@Html.DisplayFor(model => model.cpf)" disabled readonly>
+        </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-6" style="margin-top: 1%;">
+        @Html.LabelFor(model => model.sex, htmlAttributes: new { @class = "form-label", @style = "margin-left:1%; color: white" })
+        <div class="form-check" style="margin-left:0">
+            @Html.RadioButton("sex", "M", htmlAttributes: new { @style = "form-check;" })<a style="color: white">Maculino</a>
+            @Html.RadioButton("sex", "F", htmlAttributes: new { @style = "form-check;" }) <a style="color: white">Feminino</a>
+            @Html.RadioButton("sex", "-", htmlAttributes: new { @style = "form-check;" })<a style="color: white"> Outro</a>
+        </div>
+        @Html.ValidationMessageFor(model => model.sex, "", new { @class = "text-danger" })
+
+    </div>
+
+
+    <div class="col-md-6">
+        @* Não atualiza *@
+        <label for="exampleFormControlInput1" class="form-label" style="margin-left:1%;color: white">Email</label>
+        <input type="tel" class="form-control rounded-pill" id="exampleFormControlInput1" value="@Html.DisplayFor(model => model.email)" disabled readonly>
+    </div>
+
+
+</div>
+
+<div class="row">
+    
+    <div class="col-md-3">
+        @* Não atualiza *@
+        <label for="exampleFormControlInput1" class="form-label"  style = "margin-left:1%;color: white">Telefone</label>
+        <input type="tel" class="form-control rounded-pill" id="exampleFormControlInput1" value="@Html.DisplayFor(model => model.name)" disabled readonly>
+    </div>
+
+    <div class="col-md-2">
+
+        @Html.LabelFor(model => model.birthday, htmlAttributes: new { @class = "form-label", @style = "margin-left:1%; color: white" })
+        @Html.EditorFor(model => model.birthday, new { htmlAttributes = new { @class = "form-control focus-input rounded-pill", @style = "border-color: #2A435B", @type = "date" } })
+        @Html.ValidationMessageFor(model => model.birthday, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="col-md-2">
+
+        @Html.LabelFor(model => model.cep, htmlAttributes: new { @class = "form-label", @style = "margin-left:1%; color: white" })
+        @Html.EditorFor(model => model.cep, new { htmlAttributes = new { @class = "form-control focus-input rounded-pill", @style = "border-color: #2A435B" } })
+        @Html.ValidationMessageFor(model => model.cep, "", new { @class = "text-danger" })
+    </div>
+    <div class="col-md-2">
+        @Html.LabelFor(model => model.number, htmlAttributes: new { @class = "form-label", @style = "margin-left:1%;color: white" })
+        @Html.EditorFor(model => model.number, new { htmlAttributes = new { @class = "form-control focus-input rounded-pill", @placeholder = "Insira um endereço válido...", @style = "border-color: #2A435B" } })
+        @Html.ValidationMessageFor(model => model.number, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-6">
+        @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "form-label", @style = "margin-left:1%;color: white" })
+        @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control focus-input rounded-pill", @placeholder = "Insira sua senha...", @style = "border-color: #2A435B" } })
+        @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="col-md-6">
+        @Html.LabelFor(model => model.confirmPassword, htmlAttributes: new { @class = "form-label", @style = "margin-left:1%;color: white" })
+        @Html.EditorFor(model => model.confirmPassword, new { htmlAttributes = new { @class = "form-control focus-input rounded-pill", @placeholder = "Confirme sua senha...", @style = "border-color: #2A435B" } })
+        @Html.ValidationMessageFor(model => model.confirmPassword, "", new { @class = "text-danger" })
+    </div>
+</div>
+<div style="padding-top:15px">
+    <center>
+        <button type="submit" class="ui inverted violet button">Cadastrar</button>
+    </center>
+</div>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<h2>DetailsEmp</h2>
+
+    <div>
+        <h4>ViewEmployee</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.login)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.login)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.sex)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.sex)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.cpf)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.cpf)
+            </dd>
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.birthday)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.birthday)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.telephone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.telephone)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.cep)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.cep)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.password)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.password)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.confirmPassword)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.confirmPassword)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.role)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.role)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@

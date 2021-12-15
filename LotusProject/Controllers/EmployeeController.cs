@@ -67,8 +67,51 @@ namespace LotusProject.Controllers
 
         public ActionResult Employees()
         {
+            var emps = AcEmployee.EmployeeAll();
+            return View(emps);
+        }
+
+        public ActionResult SignUpEmp()
+        {
             return View();
         }
+
+
+
+        [HttpPost]
+        public ActionResult SignUpEmp(Employee employee)
+        {
+            if (ModelState.IsValid)
+            {
+                AcEmployee.SignUp(employee);
+                return RedirectToAction("AdminatrativeCenterEmployee", "Employee");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        public ActionResult DetailsEmp(string login)
+        {
+            var employee = AcEmployee.DataEmployee(login);
+            return View(employee);
+        }
+
+        //public ActionResult DeleteEmp(Employee employee, int id)
+        //{
+
+        //    EmployeeActions.DeleteEmployee(employee, id);
+        //    return RedirectToAction("AdminatrativeCenterEmployee", "Employee");
+        //}
+
+        //public ActionResult UpdateEmp(Employee employee, int id)
+        //{
+
+        //    EmployeeActions.UpdateEmployee(employee, id);
+        //    return RedirectToAction("AdminatrativeCenterEmployee", "Employee");
+        //}
+
 
     }
 }

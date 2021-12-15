@@ -1,8 +1,121 @@
-﻿
-@{
-    ViewBag.Title = "About";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@{ ViewBag.Title = "Conheça-nos";
+<link rel="stylesheet" href="~/static/css/KnowUs.css">
 }
 
-<h2>About</h2>
 
+
+<div class="row">
+    <div class="col-md-6 align-square" data-anime="left" style="background-color:#2A435B;">
+        <div style="height: 90%; width: 90%;">
+            <img class="photo" src="~/static/Images/ImageKnowUs.png" />
+        </div>
+    </div>
+
+    <div class="col-md-6 align-square" data-anime="right">
+
+        <div class="align-square div-text" style="height: 90%; width: 90%; background-color: #EFEAE5; margin-top: 20%; margin-bottom: 20% ">
+            <div class="div-text-internal">
+                <br />
+                <h1 style="color: #2A435B; "><b>Conheça-nos</b></h1>
+                <br />
+                
+                    <hr style="height: 3px; width: 250px; border-width: 0; background-color: #2A435B; color: #2A435B ">
+                
+                <br />
+
+                <h5 style="text-align: justify; color: #2A435B; ">Aberto em 2005, o LOTUS SPA é dedicado a dar aos seus clientes serviços luxuosos e de qualidade, para garantir os melhores cuidados.</h5>
+                <br />
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div style="height: 2px; background-color: #EFEAE5; margin-bottom: 80px"></div>
+
+<div class="client-say">
+    <div>
+        <center>
+            <h1 style="font-size: 40px; font-family: 'Poppins', sans-serif; color: #EFEAE5"><b>O que os nossos clientes dizem</b></h1>
+        </center>
+        <br />
+        <br />
+        <br />
+    </div>
+
+    <br />
+    <div class="container">
+        <div class="row text-client">
+
+
+            <div class="col-md-4 columns-client" data-anime="left">
+                <h2><b>Alberto Costa</b></h2>
+                <p style="font-size:13px">REPRESENTANTE DE MARKETING</p>
+                <img class="photo-client" style="height:100px; width:100px; border-radius:50%" src="~/static/Images/Alberto Costa.png" />
+                <p>Depoimentos são citações curtas das pessoas que curtem sua marca. É uma ótima forma de convencer os clientes a experimentar seus serviços.</p>
+            </div>
+
+            <div class="col-md-4 columns-client" data-anime="botton">
+                <h2><b>Janice Pereira</b></h2>
+                <p style="font-size:13px">MODELO</p>
+                <img class="photo-client" style="height:100px; width:100px; border-radius:50%" src="~/static/Images/Janice Pereira.png" />
+                <p>Depoimentos são citações curtas das pessoas que curtem sua marca. É uma ótima forma de convencer os clientes a experimentar seus serviços.</p>
+
+            </div>
+
+            <div class="col-md-4 columns-client" data-anime="right">
+                <h2><b>Edward Ramon</b></h2>
+                <p style="font-size:13px">ATOR</p>
+                <img class="photo-client" style="height:100px; width:100px; border-radius:50%" src="~/static/Images/Edward Ramon.png" />
+                <p>Depoimentos são citações curtas das pessoas que curtem sua marca. É uma ótima forma de convencer os clientes a experimentar seus serviços.</p>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+</div>
+<br />
+<div style="height: 2px; background-color: #EFEAE5; margin-top: 20px; margin-bottom: 80px;"></div>
+
+<div class="row">
+
+
+    <div class="col-md-6 align-square">
+
+        <div class="align-square div-text" style="height: 90%; width: 90%; background-color: #EFEAE5; ">
+            <div style="width:50%; text-align:left; margin-top:20%; margin-bottom:20% ">
+
+                <h1 style="color: #2A435B;font-size:300% "><b>Agende um horário</b></h1>
+                <center>
+                    <hr style="height: 2px; width: 100%; border-width: 0; background-color: #2A435B; color: #2A435B ">
+                </center>
+
+                <h5 style="text-align: left; font-size: 110%; color: #2A435B"><b>TELEFONE</b></h5>
+                <h5 style="text-align: left; font-size: 110%">(11) 9763-4567</h5>
+                <br />
+                <h5 style="text-align: left; font-size: 110%; color: #2A435B"><b>E-MAIL</b></h5>
+                <h5 style="text-align: left; font-size: 110%;">lotusspa@gmail.com</h5>
+                <br />
+                <h5 style="text-align: left; font-size: 110%; color: #2A435B"><b>ENDEREÇO</b></h5>
+                <h5 style="text-align: left; font-size: 110%">Rua Antonieta, 1080 - São paulo, SP</h5>
+
+                <br />
+                <a href="~/Reservation/Reservation" type="button" class="btn btn-outline-primary" style="width:100%">RESERVAS ON-LINE</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-6 align-square" style="background-color:#2A435B;">
+        <div style="height: 90%; width: 90%;">
+            <img class="photo" src="~/static/Images/womaninthebathtub.png" />
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="~/static/js/Animation.js"></script>

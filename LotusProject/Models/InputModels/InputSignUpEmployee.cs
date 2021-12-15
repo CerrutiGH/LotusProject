@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace LotusProject.Models
+namespace LotusProject.Models.InputModels
 {
-    public class Employee
+    public class InputSignUpEmployee
     {
         [Display(Name = "Nome Completo")]
         public string name { get; set; }
@@ -14,11 +14,13 @@ namespace LotusProject.Models
         [Display(Name = "Login")]
         public string login { get; set; }
 
+
         [Display(Name = "Sexo")]
         public char sex { get; set; }
 
         [Display(Name = "CPF")]
         public string cpf { get; set; }
+
 
         [Display(Name = "Data de nascimento")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
@@ -29,7 +31,7 @@ namespace LotusProject.Models
 
         [Display(Name = "Cep")]
         public string cep { get; set; }
-        
+
         [Display(Name = "Número da residência")]
         public int number { get; set; }
 
